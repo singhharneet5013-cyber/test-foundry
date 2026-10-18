@@ -1,0 +1,21 @@
+[project]
+name = "langgraph-custom-host-responses"
+version = "0.1.0"
+description = "A Microsoft Foundry hosted agent built with LangGraph."
+requires-python = ">=3.12"
+dependencies = [
+    "azure-ai-contentunderstanding>=1.2.0b2",
+    "langchain-azure-ai[hosting]>=1.2.9",
+    "azure-ai-projects",
+    "openai<3",
+    "httpx<1",
+    "langchain",
+    "langchain-openai",
+    "python-dotenv",
+    "starlette",
+    "debugpy",
+    "reportlab>=5.0.1",
+    "pypdf>=6.21.1",
+    "azure-identity>=1.25.3",
+    "azure-search-documents>=12.0.0",
+]

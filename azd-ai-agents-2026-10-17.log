@@ -1,0 +1,897 @@
+[2026-10-17T13:11:59-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://ai.azure.com/.default"
+[2026-10-17T13:12:00-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://ai.azure.com/.default"
+[2026-10-17T13:12:01-04:00] Retry: =====> Try=1 for GET https://graph.microsoft.com/v1.0/me
+[2026-10-17T13:12:02-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://graph.microsoft.com/.default"
+[2026-10-17T13:12:02-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://graph.microsoft.com/v1.0/me
+   Authorization: REDACTED
+   User-Agent: azsdk-go-graph/1.0.0 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T13:12:03-04:00] Response: ==> REQUEST/RESPONSE (Try=1/414.747ms, OpTime=414.747ms) -- RESPONSE RECEIVED
+   GET https://graph.microsoft.com/v1.0/me
+   Authorization: REDACTED
+   User-Agent: azsdk-go-graph/1.0.0 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Client-Request-Id: REDACTED
+   Content-Type: application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8
+   Date: Sat, 17 Oct 2026 17:12:01 GMT
+   Odata-Version: REDACTED
+   Request-Id: ca75f62b-8ab3-4bd1-a9c7-19f5b61c750d
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Ms-Ags-Diagnostic: REDACTED
+   X-Ms-Resource-Unit: REDACTED
+
+[2026-10-17T13:12:03-04:00] Retry: response 200
+[2026-10-17T13:12:03-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T13:12:03-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+[2026-10-17T13:12:03-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T13:12:03-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T13:12:03-04:00] Response: ==> REQUEST/RESPONSE (Try=1/256.4259ms, OpTime=256.4259ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 3150
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 17:12:02 GMT
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: REDACTED
+   X-Ms-Operation-Identifier: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: 8ae70477-fcf7-45da-a078-5f8a5b8c6a2c
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+   X-Powered-By: REDACTED
+
+[2026-10-17T13:12:03-04:00] Retry: response 200
+[2026-10-17T13:12:03-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T13:12:04-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+[2026-10-17T13:12:04-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T13:12:04-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+
+[2026-10-17T13:12:04-04:00] Response: ==> REQUEST/RESPONSE (Try=1/170.1063ms, OpTime=170.1063ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 1024
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 17:12:03 GMT
+   Etag: "4d0d6e29-0000-0300-0000-6ad398430000"
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Envoy-Upstream-Service-Time: REDACTED
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: 59101743-830b-4813-aa04-0c8746be165c
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+
+[2026-10-17T13:12:04-04:00] Retry: response 200
+[2026-10-17T13:12:04-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T13:12:04-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/capabilityHosts?api-version=2025-06-01
+[2026-10-17T13:12:05-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T13:12:05-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/capabilityHosts?api-version=2025-06-01
+   Authorization: REDACTED
+   User-Agent: azsdk-go-azure.ai.agents.storage-diagnostics/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+
+[2026-10-17T13:12:05-04:00] Response: ==> REQUEST/RESPONSE (Try=1/196.1492ms, OpTime=196.1492ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/capabilityHosts?api-version=2025-06-01
+   Authorization: REDACTED
+   User-Agent: azsdk-go-azure.ai.agents.storage-diagnostics/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Azureml-Served-By-Cluster: REDACTED
+   Cache-Control: no-cache
+   Content-Length: 752
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 17:12:04 GMT
+   Expires: -1
+   Pragma: no-cache
+   Request-Context: REDACTED
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+   X-Ms-Operation-Identifier: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: 3a30109f-600c-408c-9746-eb13fb0c0e3b
+   X-Ms-Response-Type: REDACTED
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+   X-Request-Time: REDACTED
+
+[2026-10-17T13:12:05-04:00] Retry: response 200
+[2026-10-17T13:12:05-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T13:12:05-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/connections?api-version=2025-06-01
+[2026-10-17T13:12:05-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/connections?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+
+[2026-10-17T13:12:07-04:00] Response: ==> REQUEST/RESPONSE (Try=1/1.8781199s, OpTime=1.8781199s) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/connections?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Azureml-Served-By-Cluster: REDACTED
+   Cache-Control: max-age=120
+   Content-Length: 3220
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 17:12:06 GMT
+   Request-Context: REDACTED
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+   X-Ms-Operation-Identifier: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: 25057220-c5c6-474d-b3a7-97f2562711a3
+   X-Ms-Response-Type: REDACTED
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+   X-Request-Time: REDACTED
+
+[2026-10-17T13:12:07-04:00] Retry: response 200
+[2026-10-17T13:12:07-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T13:12:07-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/connections?api-version=2025-06-01
+[2026-10-17T13:12:07-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/connections?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+
+[2026-10-17T13:12:07-04:00] Response: ==> REQUEST/RESPONSE (Try=1/198.8421ms, OpTime=198.8421ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/connections?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Azureml-Served-By-Cluster: REDACTED
+   Cache-Control: max-age=120
+   Content-Length: 3304
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 17:12:06 GMT
+   Request-Context: REDACTED
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: 88b72a63-c9a8-0103-30fe-19df34766a6e
+   X-Ms-Operation-Identifier: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: c27ac8cc-0c76-44ae-b852-8765dbe8b36a
+   X-Ms-Response-Type: REDACTED
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+   X-Request-Time: REDACTED
+
+[2026-10-17T13:12:07-04:00] Retry: response 200
+[2026-10-17T13:12:07-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:09:53-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+[2026-10-17T17:09:55-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:09:55-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+
+[2026-10-17T17:09:57-04:00] Response: ==> REQUEST/RESPONSE (Try=1/1.7482203s, OpTime=1.7482203s) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 1237
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:09:56 GMT
+   Etag: "4f0d0c35-0000-0300-0000-6ad3ad150000"
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Envoy-Upstream-Service-Time: REDACTED
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: 40f1f7de-f646-40bf-8ec9-9e3bfdfa1ec8
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+
+[2026-10-17T17:09:57-04:00] Retry: response 200
+[2026-10-17T17:09:57-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:09:58-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+[2026-10-17T17:10:02-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:10:02-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+
+[2026-10-17T17:10:02-04:00] Response: ==> REQUEST/RESPONSE (Try=1/208.1087ms, OpTime=208.1087ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 1237
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:10:00 GMT
+   Etag: "4f0d0c35-0000-0300-0000-6ad3ad150000"
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Envoy-Upstream-Service-Time: REDACTED
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: d362dff9-1c37-4925-b24f-604035476cd9
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+
+[2026-10-17T17:10:02-04:00] Retry: response 200
+[2026-10-17T17:10:02-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:10:02-04:00] Retry: =====> Try=1 for GET https://graph.microsoft.com/v1.0/me
+[2026-10-17T17:10:04-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://graph.microsoft.com/.default"
+[2026-10-17T17:10:04-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://graph.microsoft.com/v1.0/me
+   Authorization: REDACTED
+   User-Agent: azsdk-go-graph/1.0.0 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T17:10:04-04:00] Response: ==> REQUEST/RESPONSE (Try=1/617.9368ms, OpTime=617.9368ms) -- RESPONSE RECEIVED
+   GET https://graph.microsoft.com/v1.0/me
+   Authorization: REDACTED
+   User-Agent: azsdk-go-graph/1.0.0 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Client-Request-Id: REDACTED
+   Content-Type: application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8
+   Date: Sat, 17 Oct 2026 21:10:03 GMT
+   Odata-Version: REDACTED
+   Request-Id: ddd0b293-b9d9-4a68-83a1-31fd3bc59840
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Ms-Ags-Diagnostic: REDACTED
+   X-Ms-Resource-Unit: REDACTED
+
+[2026-10-17T17:10:04-04:00] Retry: response 200
+[2026-10-17T17:10:04-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:10:04-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+[2026-10-17T17:10:06-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:10:06-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T17:10:06-04:00] Response: ==> REQUEST/RESPONSE (Try=1/445.1288ms, OpTime=445.1288ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 3150
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:10:05 GMT
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: REDACTED
+   X-Ms-Operation-Identifier: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: c503c918-84a2-4882-ae99-78794617602e
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+   X-Powered-By: REDACTED
+
+[2026-10-17T17:10:06-04:00] Retry: response 200
+[2026-10-17T17:10:06-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:10:06-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+[2026-10-17T17:10:07-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:10:07-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T17:10:08-04:00] Response: ==> REQUEST/RESPONSE (Try=1/207.1795ms, OpTime=207.1795ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 3150
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:10:06 GMT
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: REDACTED
+   X-Ms-Operation-Identifier: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: b3192a6b-06aa-483a-82df-c7bd6ff2eb23
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+   X-Powered-By: REDACTED
+
+[2026-10-17T17:10:08-04:00] Retry: response 200
+[2026-10-17T17:10:08-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:10:08-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111?api-version=2025-03-01-preview
+[2026-10-17T17:10:09-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:10:09-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111?api-version=2025-03-01-preview
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcontainerregistry/v1.3.0-beta.3 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T17:10:09-04:00] Response: ==> REQUEST/RESPONSE (Try=1/247.6167ms, OpTime=247.6167ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111?api-version=2025-03-01-preview
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcontainerregistry/v1.3.0-beta.3 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Api-Supported-Versions: REDACTED
+   Cache-Control: no-cache
+   Content-Length: 1486
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:10:08 GMT
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: 658e9b77-a2a4-4975-ae01-23bdcf2d4754
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+
+[2026-10-17T17:10:09-04:00] Retry: response 200
+[2026-10-17T17:10:09-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:10:09-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+[2026-10-17T17:10:12-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:10:12-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T17:10:13-04:00] Response: ==> REQUEST/RESPONSE (Try=1/1.0634294s, OpTime=1.0634294s) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 4162
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:10:11 GMT
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: REDACTED
+   X-Ms-Operation-Identifier: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: f3facdb9-6276-49e0-b2e1-f3a63becaba9
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+   X-Powered-By: REDACTED
+
+[2026-10-17T17:10:13-04:00] Retry: response 200
+[2026-10-17T17:10:13-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:10:14-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://ai.azure.com/.default"
+[2026-10-17T17:10:14-04:00] Retry: =====> Try=1 for GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses?api-version=v1
+[2026-10-17T17:10:14-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses?api-version=v1
+   Authorization: REDACTED
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+
+[2026-10-17T17:10:15-04:00] Response: ==> REQUEST/RESPONSE (Try=1/1.0992128s, OpTime=1.0992128s) -- RESPONSE RECEIVED
+   GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses?api-version=v1
+   Authorization: REDACTED
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Access-Control-Expose-Headers: REDACTED
+   Api-Supported-Versions: REDACTED
+   Apim-Request-Id: REDACTED
+   Azureml-Served-By-Cluster: REDACTED
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:10:13 GMT
+   Request-Context: REDACTED
+   Server: istio-envoy
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Region: REDACTED
+   X-Ms-Response-Type: REDACTED
+   X-Request-Id: bbd253006404ceaf79af17fefeb594c4
+
+[2026-10-17T17:10:15-04:00] Retry: response 200
+[2026-10-17T17:10:15-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:10:15-04:00] Retry: =====> Try=1 for POST https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions?api-version=v1
+[2026-10-17T17:10:15-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   POST https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions?api-version=v1
+   Authorization: REDACTED
+   Content-Length: 605
+   Content-Type: application/json
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+
+[2026-10-17T17:10:15-04:00] Response: ==> REQUEST/RESPONSE (Try=1/250.9106ms, OpTime=250.9106ms) -- RESPONSE RECEIVED
+   POST https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions?api-version=v1
+   Authorization: REDACTED
+   Content-Length: 605
+   Content-Type: application/json
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Access-Control-Expose-Headers: REDACTED
+   Api-Supported-Versions: REDACTED
+   Apim-Request-Id: REDACTED
+   Azureml-Served-By-Cluster: REDACTED
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:10:14 GMT
+   Request-Context: REDACTED
+   Server: istio-envoy
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Region: REDACTED
+   X-Ms-Response-Type: REDACTED
+   X-Request-Id: 3c163122b453d466b46e37bafd67aaa0
+
+[2026-10-17T17:10:15-04:00] Retry: response 200
+[2026-10-17T17:10:15-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:10:17-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://ai.azure.com/.default"
+[2026-10-17T17:10:17-04:00] Retry: =====> Try=1 for GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions/8?api-version=v1
+[2026-10-17T17:10:17-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions/8?api-version=v1
+   Authorization: REDACTED
+   Foundry-Features: REDACTED
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+
+[2026-10-17T17:10:17-04:00] Response: ==> REQUEST/RESPONSE (Try=1/761.7353ms, OpTime=761.7353ms) -- RESPONSE RECEIVED
+   GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions/8?api-version=v1
+   Authorization: REDACTED
+   Foundry-Features: REDACTED
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: 166376bf-4995-8f84-8f01-ce0ff8611e49
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Access-Control-Expose-Headers: REDACTED
+   Api-Supported-Versions: REDACTED
+   Apim-Request-Id: REDACTED
+   Azureml-Served-By-Cluster: REDACTED
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:10:16 GMT
+   Request-Context: REDACTED
+   Server: istio-envoy
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Region: REDACTED
+   X-Ms-Response-Type: REDACTED
+   X-Request-Id: 8d03d59a74c5cf26dcbc0be3bf2e7c0f
+
+[2026-10-17T17:10:17-04:00] Retry: response 200
+[2026-10-17T17:10:17-04:00] Retry: exit due to non-retriable status code
+2026/10/17 17:10:18 postdeploy: no optimization candidate for langgraph-custom-host-responses, skipping
+[2026-10-17T17:19:22-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+[2026-10-17T17:19:24-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:19:24-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+
+[2026-10-17T17:19:24-04:00] Response: ==> REQUEST/RESPONSE (Try=1/559.3943ms, OpTime=559.3943ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 1237
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:19:23 GMT
+   Etag: "4f0d0c35-0000-0300-0000-6ad3ad150000"
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Envoy-Upstream-Service-Time: REDACTED
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: 7cdf1145-011c-4c2b-b34a-4879b36bf7ae
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+
+[2026-10-17T17:19:24-04:00] Retry: response 200
+[2026-10-17T17:19:24-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:19:25-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+[2026-10-17T17:19:27-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:19:27-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+
+[2026-10-17T17:19:27-04:00] Response: ==> REQUEST/RESPONSE (Try=1/361.1736ms, OpTime=361.1736ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo?api-version=2025-06-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcognitiveservices/v2.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 1237
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:19:26 GMT
+   Etag: "4f0d0c35-0000-0300-0000-6ad3ad150000"
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Envoy-Upstream-Service-Time: REDACTED
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: ca956660-ec45-4f22-ab84-e77c5fc0650d
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+
+[2026-10-17T17:19:27-04:00] Retry: response 200
+[2026-10-17T17:19:27-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:19:28-04:00] Retry: =====> Try=1 for GET https://graph.microsoft.com/v1.0/me
+[2026-10-17T17:19:31-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://graph.microsoft.com/.default"
+[2026-10-17T17:19:31-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://graph.microsoft.com/v1.0/me
+   Authorization: REDACTED
+   User-Agent: azsdk-go-graph/1.0.0 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T17:19:32-04:00] Response: ==> REQUEST/RESPONSE (Try=1/822.0365ms, OpTime=822.0365ms) -- RESPONSE RECEIVED
+   GET https://graph.microsoft.com/v1.0/me
+   Authorization: REDACTED
+   User-Agent: azsdk-go-graph/1.0.0 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Client-Request-Id: REDACTED
+   Content-Type: application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8
+   Date: Sat, 17 Oct 2026 21:19:30 GMT
+   Odata-Version: REDACTED
+   Request-Id: b40f90c7-4770-4164-b10d-3ee08c101905
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Ms-Ags-Diagnostic: REDACTED
+   X-Ms-Resource-Unit: REDACTED
+
+[2026-10-17T17:19:32-04:00] Retry: response 200
+[2026-10-17T17:19:32-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:19:32-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+[2026-10-17T17:19:35-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:19:35-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T17:19:36-04:00] Response: ==> REQUEST/RESPONSE (Try=1/268.3385ms, OpTime=268.3385ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 3150
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:19:34 GMT
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: REDACTED
+   X-Ms-Operation-Identifier: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: d714326b-2408-44a3-843e-307069251333
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+   X-Powered-By: REDACTED
+
+[2026-10-17T17:19:36-04:00] Retry: response 200
+[2026-10-17T17:19:36-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:19:36-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+[2026-10-17T17:19:37-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:19:37-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T17:19:38-04:00] Response: ==> REQUEST/RESPONSE (Try=1/485.8798ms, OpTime=485.8798ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.CognitiveServices/accounts/fraud-demo/projects/proj-demo/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 3150
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:19:36 GMT
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: REDACTED
+   X-Ms-Operation-Identifier: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: 8876b389-de52-4606-a682-0a3f5fb9aee6
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+   X-Powered-By: REDACTED
+
+[2026-10-17T17:19:38-04:00] Retry: response 200
+[2026-10-17T17:19:38-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:19:38-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111?api-version=2025-03-01-preview
+[2026-10-17T17:19:39-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:19:39-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111?api-version=2025-03-01-preview
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcontainerregistry/v1.3.0-beta.3 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T17:19:39-04:00] Response: ==> REQUEST/RESPONSE (Try=1/399.2479ms, OpTime=399.2479ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111?api-version=2025-03-01-preview
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armcontainerregistry/v1.3.0-beta.3 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Api-Supported-Versions: REDACTED
+   Cache-Control: no-cache
+   Content-Length: 1486
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:19:38 GMT
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: 06589aa1-6620-4085-b990-dea4d4c46e42
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+
+[2026-10-17T17:19:39-04:00] Retry: response 200
+[2026-10-17T17:19:39-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:19:39-04:00] Retry: =====> Try=1 for GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+[2026-10-17T17:19:42-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://management.core.windows.net//.default"
+[2026-10-17T17:19:42-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+
+[2026-10-17T17:19:42-04:00] Response: ==> REQUEST/RESPONSE (Try=1/311.2429ms, OpTime=311.2429ms) -- RESPONSE RECEIVED
+   GET https://management.azure.com/subscriptions/31233bbe-9184-4579-be85-924d8ed83d50/resourceGroups/demo-1/providers/Microsoft.ContainerRegistry/registries/demoacr1111/providers/Microsoft.Authorization/roleAssignments?%24filter=REDACTED&api-version=2022-04-01
+   Accept: application/json
+   Authorization: REDACTED
+   User-Agent: azsdk-go-armauthorization/v3.0.0-beta.2 (go1.26.4-X:loopvar; Windows_NT)
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Cache-Control: no-cache
+   Content-Length: 4162
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:19:41 GMT
+   Expires: -1
+   Pragma: no-cache
+   Strict-Transport-Security: REDACTED
+   X-Cache: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Correlation-Request-Id: REDACTED
+   X-Ms-Operation-Identifier: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Global-Reads: REDACTED
+   X-Ms-Ratelimit-Remaining-Subscription-Reads: REDACTED
+   X-Ms-Request-Id: 99098a42-4217-4076-99f9-8c7aa634718d
+   X-Ms-Routing-Request-Id: REDACTED
+   X-Msedge-Ref: REDACTED
+   X-Powered-By: REDACTED
+
+[2026-10-17T17:19:42-04:00] Retry: response 200
+[2026-10-17T17:19:42-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:19:44-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://ai.azure.com/.default"
+[2026-10-17T17:19:44-04:00] Retry: =====> Try=1 for GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses?api-version=v1
+[2026-10-17T17:19:44-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses?api-version=v1
+   Authorization: REDACTED
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+
+[2026-10-17T17:19:45-04:00] Response: ==> REQUEST/RESPONSE (Try=1/1.1816335s, OpTime=1.1816335s) -- RESPONSE RECEIVED
+   GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses?api-version=v1
+   Authorization: REDACTED
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Access-Control-Expose-Headers: REDACTED
+   Api-Supported-Versions: REDACTED
+   Apim-Request-Id: REDACTED
+   Azureml-Served-By-Cluster: REDACTED
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:19:44 GMT
+   Request-Context: REDACTED
+   Server: istio-envoy
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Region: REDACTED
+   X-Ms-Response-Type: REDACTED
+   X-Request-Id: 6d170781c5274fbac3da578430ddf8a5
+
+[2026-10-17T17:19:45-04:00] Retry: response 200
+[2026-10-17T17:19:45-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:19:45-04:00] Retry: =====> Try=1 for POST https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions?api-version=v1
+[2026-10-17T17:19:45-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   POST https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions?api-version=v1
+   Authorization: REDACTED
+   Content-Length: 605
+   Content-Type: application/json
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+
+[2026-10-17T17:19:46-04:00] Response: ==> REQUEST/RESPONSE (Try=1/930.0251ms, OpTime=930.0251ms) -- RESPONSE RECEIVED
+   POST https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions?api-version=v1
+   Authorization: REDACTED
+   Content-Length: 605
+   Content-Type: application/json
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Access-Control-Expose-Headers: REDACTED
+   Api-Supported-Versions: REDACTED
+   Apim-Request-Id: REDACTED
+   Azureml-Served-By-Cluster: REDACTED
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:19:45 GMT
+   Request-Context: REDACTED
+   Server: istio-envoy
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Region: REDACTED
+   X-Ms-Response-Type: REDACTED
+   X-Request-Id: d33ecaccb16061ac7e5fe33faf6c225c
+
+[2026-10-17T17:19:46-04:00] Retry: response 200
+[2026-10-17T17:19:46-04:00] Retry: exit due to non-retriable status code
+[2026-10-17T17:19:51-04:00] Authentication: AzureDeveloperCLICredential.GetToken() acquired a token for scope "https://ai.azure.com/.default"
+[2026-10-17T17:19:51-04:00] Retry: =====> Try=1 for GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions/8?api-version=v1
+[2026-10-17T17:19:51-04:00] Request: ==> OUTGOING REQUEST (Try=1)
+   GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions/8?api-version=v1
+   Authorization: REDACTED
+   Foundry-Features: REDACTED
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+
+[2026-10-17T17:19:51-04:00] Response: ==> REQUEST/RESPONSE (Try=1/400.887ms, OpTime=400.887ms) -- RESPONSE RECEIVED
+   GET https://fraud-demo.services.ai.azure.com/api/projects/proj-demo/agents/langgraph-custom-host-responses/versions/8?api-version=v1
+   Authorization: REDACTED
+   Foundry-Features: REDACTED
+   User-Agent: azsdk-go-azure-ai-agents/v1.0.0 (go1.26.4-X:loopvar; Windows_NT),azd-ext-azure-ai-agents/1.0.0-beta.19
+   X-Ms-Correlation-Request-Id: e74dc78c-773a-6ead-18ac-1408748b46ca
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Access-Control-Expose-Headers: REDACTED
+   Api-Supported-Versions: REDACTED
+   Apim-Request-Id: REDACTED
+   Azureml-Served-By-Cluster: REDACTED
+   Content-Type: application/json; charset=utf-8
+   Date: Sat, 17 Oct 2026 21:19:50 GMT
+   Request-Context: REDACTED
+   Server: istio-envoy
+   Strict-Transport-Security: REDACTED
+   Vary: REDACTED
+   X-Content-Type-Options: REDACTED
+   X-Ms-Region: REDACTED
+   X-Ms-Response-Type: REDACTED
+   X-Request-Id: 14074ac382f0f23e0595e1cc399a883e
+
+[2026-10-17T17:19:51-04:00] Retry: response 200
+[2026-10-17T17:19:51-04:00] Retry: exit due to non-retriable status code
+2026/10/17 17:19:52 postdeploy: no optimization candidate for langgraph-custom-host-responses, skipping

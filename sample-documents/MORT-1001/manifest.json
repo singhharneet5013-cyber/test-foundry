@@ -1,0 +1,45 @@
+{
+  "case_id": "MORT-1001",
+  "synthetic_only": true,
+  "documents": [
+    {
+      "document_id": "DOC-APP-1001",
+      "file": "MORT-1001_application.pdf",
+      "type": "mortgage_application"
+    },
+    {
+      "document_id": "DOC-PAY-1001",
+      "file": "MORT-1001_pay_stub.pdf",
+      "type": "pay_stub"
+    },
+    {
+      "document_id": "DOC-EMP-1001",
+      "file": "MORT-1001_employment_letter.pdf",
+      "type": "employment_letter"
+    }
+  ],
+  "ground_truth": {
+    "application": {
+      "requested_mortgage_cad": 525000,
+      "property_value_cad": 700000,
+      "annual_income_cad": 120000,
+      "monthly_liabilities_cad": 850,
+      "employment_status": "employed"
+    },
+    "pay_stub": {
+      "annualized_income_cad": 108000,
+      "employment_status": "employed"
+    },
+    "employment_letter": {
+      "annual_salary_cad": 108000,
+      "employment_status": "permanent full-time"
+    },
+    "internal_reference": {
+      "annual_income_cad": 120000,
+      "monthly_liabilities_cad": 1450,
+      "employment_status": "employed"
+    }
+  },
+  "expected_deterministic_outcome": "REVIEW_REQUIRED",
+  "safety_note": "Do not automatically approve or decline. Human adjudication is required."
+}
