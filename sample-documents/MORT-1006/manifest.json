@@ -1,0 +1,46 @@
+{
+  "case_id": "MORT-1006",
+  "synthetic_only": true,
+  "scenario": "clean_match_no_human_adjudication",
+  "documents": [
+    {
+      "document_id": "DOC-APP-1006",
+      "file": "MORT-1006_application.json",
+      "type": "mortgage_application"
+    },
+    {
+      "document_id": "DOC-PAY-1006",
+      "file": "MORT-1006_pay_stub.json",
+      "type": "pay_stub"
+    },
+    {
+      "document_id": "DOC-EMP-1006",
+      "file": "MORT-1006_employment_letter.json",
+      "type": "employment_letter"
+    }
+  ],
+  "ground_truth": {
+    "application": {
+      "annual_income_cad": 105000,
+      "monthly_liabilities_cad": 600,
+      "employment_status": "employed"
+    },
+    "pay_stub": {
+      "annual_income_cad": 105000,
+      "employment_status": "employed"
+    },
+    "employment_letter": {
+      "annual_income_cad": 105000,
+      "employment_status": "employed"
+    },
+    "internal_reference": {
+      "annual_income_cad": 105000,
+      "monthly_liabilities_cad": 600,
+      "employment_status": "employed"
+    }
+  },
+  "expected_deterministic_outcome": "VALIDATED_NO_ADJUDICATION_REQUIRED",
+  "expected_flags": [],
+  "adjudication_boundary": "No human adjudication is required for this clean document-validation scenario. This is not a mortgage approval or decline; credit decisions remain outside this POC.",
+  "safety_note": "Synthetic test data only."
+}
