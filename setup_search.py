@@ -1,7 +1,7 @@
 """Extract synthetic mortgage PDFs and index their fields in Azure AI Search.
 
-Run from the repository root:
-    python setup_search.py
+Run from the repository root (using the app's dependency environment):
+    uv run --project src/langgraph-custom-host-responses python setup_search.py
 
 Authentication uses DefaultAzureCredential (for example, az login). The script
 indexes only PDFs under sample-documents/MORT-1001 through MORT-1006. JSON fixtures
@@ -147,6 +147,31 @@ def main() -> int:
             print(f"{case_id}: extracted {len(pdfs)} PDFs into {len(case_records)} field records")
 
         index_client.create_or_update_index(build_index())
+
+        # Remove old records for the selected synthetic cases first. This prevents
+        # fields from a previous run (for example, a now-missing document) surviving.
+        existing_ids: list[str] = []
+        for case_id in case_ids:
+            existing_ids.extend(
+                item["id"]
+                for item in search_client.search(
+                    search_text="*",
+                    filter=f"case_id eq '{case_id}'",
+                    select=["id"],
+                    top=1000,
+                )
+            )
+        for offset in range(0, len(existing_ids), 500):
+            deleted = search_client.delete_documents(
+                documents=[{"id": item_id} for item_id in existing_ids[offset:offset + 500]]
+            )
+            failures = [result for result in deleted if not result.succeeded]
+            if failures:
+                details = "; ".join(f"{item.key}: {item.error_message}" for item in failures[:10])
+                raise RuntimeError(f"Azure AI Search failed to remove {len(failures)} stale records: {details}")
+        if existing_ids:
+            print(f"Removed {len(existing_ids)} stale records for selected cases before reindexing.")
+
         batch_size = 500
         for offset in range(0, len(all_records), batch_size):
             results = search_client.upload_documents(documents=all_records[offset:offset + batch_size])
