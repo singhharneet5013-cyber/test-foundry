@@ -1,5 +1,0 @@
-Pay Stub — Synthetic Test Case MORT-1006
-Employer: Synthetic Employer 1006
-Employment status: employed
-Annualized income: CAD 105,000
-This is fictional sample evidence for software testing only.
