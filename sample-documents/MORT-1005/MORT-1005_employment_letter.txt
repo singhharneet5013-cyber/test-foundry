@@ -1,0 +1,6 @@
+Employment Letter — Synthetic Test Case MORT-1005
+Employer: Synthetic Employer 1005
+Employment status: contract
+Annual salary: CAD 105,000
+This deliberately conflicts with the application, pay stub, and mock internal record.
+This is fictional sample evidence for software testing only.
