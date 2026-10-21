@@ -5,21 +5,24 @@
   "documents": [
     {
       "document_id": "DOC-APP-1005",
-      "file": "MORT-1005_application.txt",
+      "file": "MORT-1005_application.pdf",
       "type": "mortgage_application",
-      "fixture_file": "MORT-1005_application.json"
+      "fixture_file": "MORT-1005_application.json",
+      "text_file": "MORT-1005_application.txt"
     },
     {
       "document_id": "DOC-PAY-1005",
-      "file": "MORT-1005_pay_stub.txt",
+      "file": "MORT-1005_pay_stub.pdf",
       "type": "pay_stub",
-      "fixture_file": "MORT-1005_pay_stub.json"
+      "fixture_file": "MORT-1005_pay_stub.json",
+      "text_file": "MORT-1005_pay_stub.txt"
     },
     {
       "document_id": "DOC-EMP-1005",
-      "file": "MORT-1005_employment_letter.txt",
+      "file": "MORT-1005_employment_letter.pdf",
       "type": "employment_letter",
-      "fixture_file": "MORT-1005_employment_letter.json"
+      "fixture_file": "MORT-1005_employment_letter.json",
+      "text_file": "MORT-1005_employment_letter.txt"
     }
   ],
   "ground_truth": {
