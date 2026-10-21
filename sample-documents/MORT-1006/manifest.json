@@ -7,19 +7,19 @@
       "document_id": "DOC-APP-1006",
       "file": "MORT-1006_application.pdf",
       "type": "mortgage_application",
-      "fixture_file": "MORT-1006_application.json"
+      "fixture_file": "tests/fixtures/mortgage-validation/MORT-1006/MORT-1006_application.json"
     },
     {
       "document_id": "DOC-PAY-1006",
       "file": "MORT-1006_pay_stub.pdf",
       "type": "pay_stub",
-      "fixture_file": "MORT-1006_pay_stub.json"
+      "fixture_file": "tests/fixtures/mortgage-validation/MORT-1006/MORT-1006_pay_stub.json"
     },
     {
       "document_id": "DOC-EMP-1006",
       "file": "MORT-1006_employment_letter.pdf",
       "type": "employment_letter",
-      "fixture_file": "MORT-1006_employment_letter.json"
+      "fixture_file": "tests/fixtures/mortgage-validation/MORT-1006/MORT-1006_employment_letter.json"
     }
   ],
   "ground_truth": {
