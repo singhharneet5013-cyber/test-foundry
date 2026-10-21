@@ -69,8 +69,8 @@ APPLICATIONS: dict[str, dict[str, Any]] = {
         "property_value_cad": 550000, "declared_annual_income_cad": 120000,
         "declared_monthly_liabilities_cad": 850, "declared_employment_status": "employed",
         "documents": [
-            {"document_id": "DOC-PAY-1002", "document_type": "Pay stub", "file_name": "MORT-1002_pay_stub.json", "source": "Mock FileNet"},
-            {"document_id": "DOC-EMP-1002", "document_type": "Employment letter", "file_name": "MORT-1002_employment_letter.json", "source": "Mock FileNet"},
+            {"document_id": "DOC-PAY-1002", "document_type": "Pay stub", "file_name": "MORT-1002_pay_stub.pdf", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1002", "document_type": "Employment letter", "file_name": "MORT-1002_employment_letter.pdf", "source": "Mock FileNet"},
         ],
     },
     "MORT-1003": {
@@ -79,7 +79,7 @@ APPLICATIONS: dict[str, dict[str, Any]] = {
         "property_value_cad": 480000, "declared_annual_income_cad": 100000,
         "declared_monthly_liabilities_cad": 500, "declared_employment_status": "employed",
         "documents": [
-            {"document_id": "DOC-PAY-1003", "document_type": "Pay stub", "file_name": "MORT-1003_pay_stub.json", "source": "Mock FileNet"},
+            {"document_id": "DOC-PAY-1003", "document_type": "Pay stub", "file_name": "MORT-1003_pay_stub.pdf", "source": "Mock FileNet"},
         ],
     },
     "MORT-1004": {
@@ -88,8 +88,8 @@ APPLICATIONS: dict[str, dict[str, Any]] = {
         "property_value_cad": 620000, "declared_annual_income_cad": 110000,
         "declared_monthly_liabilities_cad": 700, "declared_employment_status": "employed",
         "documents": [
-            {"document_id": "DOC-PAY-1004", "document_type": "Pay stub", "file_name": "MORT-1004_pay_stub.json", "source": "Mock FileNet"},
-            {"document_id": "DOC-EMP-1004", "document_type": "Employment letter", "file_name": "MORT-1004_employment_letter.json", "source": "Mock FileNet"},
+            {"document_id": "DOC-PAY-1004", "document_type": "Pay stub", "file_name": "MORT-1004_pay_stub.pdf", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1004", "document_type": "Employment letter", "file_name": "MORT-1004_employment_letter.pdf", "source": "Mock FileNet"},
         ],
     },
     "MORT-1005": {
@@ -98,8 +98,8 @@ APPLICATIONS: dict[str, dict[str, Any]] = {
         "property_value_cad": 510000, "declared_annual_income_cad": 105000,
         "declared_monthly_liabilities_cad": 600, "declared_employment_status": "employed",
         "documents": [
-            {"document_id": "DOC-PAY-1005", "document_type": "Pay stub", "file_name": "MORT-1005_pay_stub.json", "source": "Mock FileNet"},
-            {"document_id": "DOC-EMP-1005", "document_type": "Employment letter", "file_name": "MORT-1005_employment_letter.json", "source": "Mock FileNet"},
+            {"document_id": "DOC-PAY-1005", "document_type": "Pay stub", "file_name": "MORT-1005_pay_stub.pdf", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1005", "document_type": "Employment letter", "file_name": "MORT-1005_employment_letter.pdf", "source": "Mock FileNet"},
         ],
     },
     "MORT-1006": {
@@ -108,8 +108,8 @@ APPLICATIONS: dict[str, dict[str, Any]] = {
         "property_value_cad": 510000, "declared_annual_income_cad": 105000,
         "declared_monthly_liabilities_cad": 600, "declared_employment_status": "employed",
         "documents": [
-            {"document_id": "DOC-PAY-1006", "document_type": "Pay stub", "file_name": "MORT-1006_pay_stub.json", "source": "Mock FileNet"},
-            {"document_id": "DOC-EMP-1006", "document_type": "Employment letter", "file_name": "MORT-1006_employment_letter.json", "source": "Mock FileNet"},
+            {"document_id": "DOC-PAY-1006", "document_type": "Pay stub", "file_name": "MORT-1006_pay_stub.pdf", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1006", "document_type": "Employment letter", "file_name": "MORT-1006_employment_letter.pdf", "source": "Mock FileNet"},
         ],
     },
 }
