@@ -1,5 +1,5 @@
 %PDF-1.4
-%ReportLab-style synthetic sample
+% ReportLab-style sample
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -16,48 +16,67 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 1164 >>
+<< /Length 643 >>
 stream
-BT /F2 17 Tf 48 748 Td (MORTGAGE APPLICATION) Tj ET
-BT /F2 10 Tf 48 724 Td (Synthetic Test Case: MORT-1002) Tj ET
-0.65 w 48 712 m 564 712 l S
-BT /F2 10 Tf 54 687 Td (Applicant) Tj ET
-BT /F1 10 Tf 220 687 Td (SYNTHETIC APPLICANT 1002) Tj ET
-0.65 w 54 671 m 558 671 l S
-BT /F2 10 Tf 54 662 Td (Requested mortgage) Tj ET
-BT /F1 10 Tf 220 662 Td (CAD 400,000) Tj ET
-0.65 w 54 646 m 558 646 l S
-BT /F2 10 Tf 54 637 Td (Property value) Tj ET
-BT /F1 10 Tf 220 637 Td (CAD 550,000) Tj ET
-0.65 w 54 621 m 558 621 l S
-BT /F2 10 Tf 54 612 Td (Declared annual income) Tj ET
-BT /F1 10 Tf 220 612 Td (CAD 120,000) Tj ET
-0.65 w 54 596 m 558 596 l S
-BT /F2 10 Tf 54 587 Td (Declared monthly liabilities) Tj ET
-BT /F1 10 Tf 220 587 Td (CAD 850) Tj ET
-0.65 w 54 571 m 558 571 l S
-BT /F2 10 Tf 54 562 Td (Declared employment status) Tj ET
-BT /F1 10 Tf 220 562 Td (Employed) Tj ET
-0.65 w 54 546 m 558 546 l S
-0.9 g 48 522 516 22 re f 0 g
-BT /F2 10 Tf 56 529 Td (Supporting Documents) Tj ET
-BT /F1 9 Tf 56 502 Td (Pay stub and employment letter) Tj ET
-0.65 w 48 464 m 564 464 l S
-BT /F2 8 Tf 48 447 Td (CONFIDENTIAL - SYNTHETIC TEST DATA) Tj ET
-BT /F1 8 Tf 474 24 Td (MORT-1002) Tj ET
+BT
+/F2 17 Tf
+48 748 Td
+(MORTGAGE APPLICATION) Tj
+/F2 10 Tf
+0 -24 Td
+(Synthetic Test Case: MORT-1002) Tj
+0 -20 Td
+0.65 w 0 0 m 516 0 l S
+/F2 10 Tf
+0 -24 Td
+(Applicant) Tj
+/F1 10 Tf
+172 0 Td
+(SYNTHETIC APPLICANT 1002) Tj
+-172 -25 Td
+/F2 10 Tf
+(Requested mortgage) Tj
+/F1 10 Tf
+172 0 Td
+(CAD 400,000) Tj
+-172 -25 Td
+/F2 10 Tf
+(Property value) Tj
+/F1 10 Tf
+172 0 Td
+(CAD 550,000) Tj
+-172 -25 Td
+/F2 10 Tf
+(Declared annual income) Tj
+/F1 10 Tf
+172 0 Td
+(CAD 120,000) Tj
+-172 -25 Td
+/F2 10 Tf
+(Declared monthly liabilities) Tj
+/F1 10 Tf
+172 0 Td
+(CAD 850) Tj
+-172 -25 Td
+/F2 10 Tf
+(Declared employment status) Tj
+/F1 10 Tf
+172 0 Td
+(Employed) Tj
+ET
 endstream
 endobj
 xref
 0 7
 0000000000 65535 f 
-0000000043 00000 n 
-0000000092 00000 n 
-0000000149 00000 n 
-0000000285 00000 n 
-0000000382 00000 n 
-0000000484 00000 n 
+0000000034 00000 n 
+0000000083 00000 n 
+0000000140 00000 n 
+0000000276 00000 n 
+0000000373 00000 n 
+0000000475 00000 n 
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-1699
+1168
 %%EOF
