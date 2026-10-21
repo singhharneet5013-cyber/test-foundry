@@ -1,9 +1,0 @@
-Mortgage Application — Synthetic Test Case MORT-1004
-Applicant: SYNTHETIC APPLICANT 1004
-Requested mortgage: CAD 450,000
-Property value: CAD 620,000
-Declared annual income: CAD 110,000
-Declared monthly liabilities: CAD 700
-Declared employment status: employed
-Supporting documents listed: pay stub and employment letter
-All data in this document is fictional and for software testing only.
