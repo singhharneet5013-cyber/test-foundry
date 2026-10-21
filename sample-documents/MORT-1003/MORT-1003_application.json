@@ -1,9 +1,0 @@
-{
-  "case_id": "MORT-1003",
-  "document_id": "DOC-APP-1003",
-  "synthetic_only": true,
-  "document_type": "mortgage_application",
-  "annual_income_cad": 100000,
-  "monthly_liabilities_cad": 500,
-  "employment_status": "employed"
-}
