@@ -138,7 +138,7 @@ def _synthetic_fixture_records(case_id: str) -> list[dict[str, Any]]:
 
 @tool
 def search_mortgage_evidence(
-    case_id: Annotated[str, "Synthetic mortgage case ID; use MORT-1001."]
+    case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]
 ) -> str:
     """Retrieve extracted mortgage document fields and evidence from Azure AI Search."""
     case_id = case_id.strip().upper()
@@ -371,7 +371,7 @@ def _comparison(case_id: str) -> dict[str, Any]:
 
 
 @tool
-def get_mortgage_application(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def get_mortgage_application(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
     """Get the synthetic mortgage application and document inventory."""
     record = APPLICATIONS.get(case_id.strip().upper())
     return _json(record if record else {"error": "Synthetic application not found.",
@@ -379,7 +379,7 @@ def get_mortgage_application(case_id: Annotated[str, "Synthetic case ID; use MOR
 
 
 @tool
-def extract_document_fields(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def extract_document_fields(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
     """Return pre-seeded synthetic OCR/extraction results; no real OCR service is called."""
     case_id = case_id.strip().upper()
     app = APPLICATIONS.get(case_id)
@@ -394,7 +394,7 @@ def extract_document_fields(case_id: Annotated[str, "Synthetic case ID; use MORT
 
 
 @tool
-def get_internal_customer_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def get_internal_customer_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
     """Get synthetic customer values from a mock internal operational API."""
     record = INTERNAL_DATA.get(case_id.strip().upper())
     return _json({"case_id": case_id.strip().upper(), **record, "mode": "MOCK_API"}
@@ -402,7 +402,7 @@ def get_internal_customer_data(case_id: Annotated[str, "Synthetic case ID; use M
 
 
 @tool
-def compare_mortgage_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def compare_mortgage_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
     """Compare application, extracted document, and internal API values deterministically."""
     try:
         return _json(_comparison(case_id))
@@ -513,7 +513,7 @@ def _create_pdf(case_id: str, app: dict[str, Any], comparison: dict[str, Any]) -
 
 
 @tool
-def generate_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def generate_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
     """Generate a PDF credit memo from deterministic synthetic validation results."""
     case_id = case_id.strip().upper()
     app = APPLICATIONS.get(case_id)
@@ -530,7 +530,7 @@ def generate_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-10
 
 
 @tool
-def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
     """Upload the generated PDF and metadata to Azure Blob Storage using managed identity."""
     from azure.storage.blob import BlobServiceClient, ContentSettings
 
@@ -608,7 +608,7 @@ def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."
 
 @tool
 def get_mock_filenet_record(
-    case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]
+    case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]
 ) -> str:
     """Retrieve the persisted mock FileNet record from local JSON metadata."""
     case_id = case_id.strip().upper()
