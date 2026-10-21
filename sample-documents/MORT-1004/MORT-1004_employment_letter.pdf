@@ -1,5 +1,5 @@
 %PDF-1.4
-%ASCII ReportLab-style synthetic document
+%MORT-1001 matching visual style
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -16,40 +16,47 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 1221 >>
+<< /Length 1858 >>
 stream
-BT /F2 15 Tf 186 750 Td (Employment Verification Letter) Tj ET
-BT /F1 9 Tf 72 724 Td (Synthetic document - Case ID: MORT-1004 - Document ID: DOC-EMP-1004) Tj ET
-BT /F2 11 Tf 72 672 Td (Employment verification) Tj ET
-BT /F1 10 Tf 85 646 Td (Employee) Tj ET
-BT /F1 10 Tf 226 646 Td (Jordan Example 1004 \(fictional\)) Tj ET
-BT /F1 10 Tf 85 622 Td (Employer) Tj ET
-BT /F1 10 Tf 226 622 Td (Example Manufacturing 1004 Ltd. \(fictional\)) Tj ET
-BT /F1 10 Tf 85 598 Td (Employment status) Tj ET
-BT /F1 10 Tf 226 598 Td (Permanent full-time) Tj ET
-BT /F1 10 Tf 85 574 Td (Annual salary) Tj ET
-BT /F1 10 Tf 226 574 Td (CAD 110,000) Tj ET
-BT /F1 10 Tf 85 550 Td (Effective date) Tj ET
-BT /F1 10 Tf 226 550 Td (2026-01-15) Tj ET
-BT /F2 10 Tf 72 506 Td (Verification statement) Tj ET
-BT /F1 9 Tf 72 486 Td (This letter confirms that Jordan Example 1004 is employed in a permanent full-time position with Example) Tj ET
-BT /F1 9 Tf 72 473 Td (Manufacturing 1004 Ltd. at an annual salary of CAD 110,000.) Tj ET
-BT /F2 10 Tf 72 440 Td (Source statement) Tj ET
-BT /F1 9 Tf 72 420 Td (Synthetic employment letter: annual salary is CAD 110,000.) Tj ET
-BT /F2 8 Tf 72 72 Td (SYNTHETIC TEST DATA ONLY - NOT A REAL EMPLOYMENT LETTER.) Tj ET
+0 0 0 rg BT /F2 15 Tf 187.752 723.5 Td (Employment Verification Letter) Tj ET
+0 0 0 rg BT /F1 9.25 Tf 52.8 698.73 Td (Synthetic document - Case ID: MORT-1004 - Document ID: DOC-EMP-1004) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 667.523 Td (Employment verification) Tj ET
+0.917647 0.941176 0.964706 rg 52.8 541.8 151.2 120 re f
+0.721569 0.760784 0.800000 RG 0.45 w 52.8 541.8 482.4 120 re S
+204 541.8 m 204 661.8 l S
+52.8 637.8 m 535.2 637.8 l S
+52.8 613.8 m 535.2 613.8 l S
+52.8 589.8 m 535.2 589.8 l S
+52.8 565.8 m 535.2 565.8 l S
+0 0 0 rg BT /F1 10 Tf 59.8 643.7299999999999 Td (Employee) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 643.7299999999999 Td (Jordan Example 1004 \(fictional\)) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 619.7299999999999 Td (Employer) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 619.7299999999999 Td (Example Manufacturing 1004 Ltd. \(fictional\)) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 595.7299999999999 Td (Employment status) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 595.7299999999999 Td (Employed) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 571.7299999999999 Td (Annual salary) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 571.7299999999999 Td (CAD 110,000) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 547.7299999999999 Td (Effective date) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 547.7299999999999 Td (2026-01-15) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 515.523 Td (Verification statement) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 496.73 Td (This letter confirms that Jordan Example 1004 is employed in a permanent full-time position with) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 484.73 Td (Example Manufacturing 1004 Ltd. at an annual salary of CAD 110,000.) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 458.523 Td (Source statement) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 439.73 Td (Synthetic employment letter: annual salary is CAD 110,000.) Tj ET
+0.40 0.40 0.40 rg BT /F1 8 Tf 52.8 411.144 Td (SYNTHETIC TEST DATA ONLY - NOT A REAL EMPLOYMENT LETTER.) Tj ET
 endstream
 endobj
 xref
 0 7
 0000000000 65535 f 
-0000000051 00000 n 
-0000000100 00000 n 
-0000000157 00000 n 
-0000000293 00000 n 
-0000000390 00000 n 
-0000000492 00000 n 
+0000000042 00000 n 
+0000000091 00000 n 
+0000000148 00000 n 
+0000000284 00000 n 
+0000000381 00000 n 
+0000000483 00000 n 
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-1764
+2392
 %%EOF
