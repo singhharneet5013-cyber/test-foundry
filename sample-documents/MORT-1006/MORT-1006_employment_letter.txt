@@ -1,0 +1,5 @@
+Employment Letter — Synthetic Test Case MORT-1006
+Employer: Synthetic Employer 1006
+Employment status: employed
+Annual salary: CAD 105,000
+This is fictional sample evidence for software testing only.
