@@ -5,15 +5,17 @@
   "documents": [
     {
       "document_id": "DOC-APP-1003",
-      "file": "MORT-1003_application.txt",
+      "file": "MORT-1003_application.pdf",
       "type": "mortgage_application",
-      "fixture_file": "MORT-1003_application.json"
+      "fixture_file": "MORT-1003_application.json",
+      "text_file": "MORT-1003_application.txt"
     },
     {
       "document_id": "DOC-PAY-1003",
-      "file": "MORT-1003_pay_stub.txt",
+      "file": "MORT-1003_pay_stub.pdf",
       "type": "pay_stub",
-      "fixture_file": "MORT-1003_pay_stub.json"
+      "fixture_file": "MORT-1003_pay_stub.json",
+      "text_file": "MORT-1003_pay_stub.txt"
     }
   ],
   "ground_truth": {
