@@ -185,43 +185,6 @@ def _build_search_client() -> SearchClient:
     )
 
 
-def _synthetic_fixture_records(case_id: str) -> list[dict[str, Any]]:
-    """Build deterministic, explicitly synthetic evidence records for added demo cases."""
-    app = APPLICATIONS.get(case_id)
-    if not app or case_id == _CASE:
-        return []
-    suffix = case_id[-4:]
-    records: list[dict[str, Any]] = []
-
-    def add(document_id: str, document_type: str, field_name: str, field_value: Any,
-            evidence_text: str) -> None:
-        numeric = field_value if isinstance(field_value, (int, float)) and not isinstance(field_value, bool) else None
-        records.append({
-            "case_id": case_id, "document_id": document_id,
-            "document_type": document_type, "field_name": field_name,
-            "field_value": str(field_value) if field_value is not None else None,
-            "field_value_number": numeric, "evidence": evidence_text,
-            "synthetic_only": True, "extraction_mode": "SYNTHETIC_FIXTURE",
-        })
-
-    app_doc = f"DOC-APP-{suffix}"
-    for field, val in [
-        ("annual_income_cad", app["declared_annual_income_cad"]),
-        ("monthly_liabilities_cad", app["declared_monthly_liabilities_cad"]),
-        ("employment_status", app["declared_employment_status"]),
-    ]:
-        add(app_doc, "Mortgage application", field, val, f"Synthetic application declares {field}={val}.")
-
-    for doc in app["documents"]:
-        fields = DOCUMENT_FIELDS.get(doc["document_id"], {})
-        for field in ("annual_income_cad", "monthly_liabilities_cad", "employment_status"):
-            if field in fields:
-                add(doc["document_id"], doc["document_type"], field, fields[field],
-                    fields.get("evidence", f"Synthetic {doc['document_type']} evidence for {field}."))
-
-    return records
-
-
 @tool
 def search_mortgage_evidence(
     case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]
@@ -250,16 +213,22 @@ def search_mortgage_evidence(
         )
 
         records = [dict(record) for record in results]
-        used_synthetic_fallback = not records and case_id != _CASE
-        if used_synthetic_fallback:
-            records = _synthetic_fixture_records(case_id)
+        if not records:
+            return _json({
+                "case_id": case_id,
+                "source": "Azure AI Search",
+                "index_name": os.environ.get(
+                    "AZURE_SEARCH_INDEX_NAME",
+                    "mortgage-document-evidence",
+                ),
+                "record_count": 0,
+                "records": [],
+                "warning": "No indexed PDF evidence found. Run setup_search.py; fixture data is not used as evidence.",
+            })
 
         return _json({
             "case_id": case_id,
-            "source": (
-                "Synthetic fixture fallback (not indexed)"
-                if used_synthetic_fallback else "Azure AI Search"
-            ),
+            "source": "Azure AI Search",
             "index_name": os.environ.get(
                 "AZURE_SEARCH_INDEX_NAME",
                 "mortgage-document-evidence",
@@ -298,12 +267,10 @@ def _comparison(case_id: str) -> dict[str, Any]:
     ))
 
     records = [dict(item) for item in results]
-    used_synthetic_fallback = not records and case_id != _CASE
-    if used_synthetic_fallback:
-        records = _synthetic_fixture_records(case_id)
     if not records:
         raise ValueError(
-            f"No indexed evidence found for {case_id}; comparison cannot proceed."
+            f"No indexed PDF evidence found for {case_id}; comparison cannot proceed. "
+            "Run setup_search.py. Synthetic fixtures are not used as evidence."
         )
 
     if any(
@@ -448,14 +415,8 @@ def _comparison(case_id: str) -> dict[str, Any]:
 
     return {
         "case_id": case_id,
-        "comparison_mode": (
-            "DETERMINISTIC_RULES_WITH_SYNTHETIC_FIXTURE_FALLBACK"
-            if used_synthetic_fallback else "DETERMINISTIC_RULES_WITH_AZURE_AI_SEARCH"
-        ),
-        "evidence_source": (
-            "Synthetic fixture fallback (not indexed)"
-            if used_synthetic_fallback else "Azure AI Search"
-        ),
+        "comparison_mode": "DETERMINISTIC_RULES_WITH_AZURE_AI_SEARCH",
+        "evidence_source": "Azure AI Search",
         "indexed_record_count": len(records),
         "checks": checks,
         "discrepancy_count": len(issues),
