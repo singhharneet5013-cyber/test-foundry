@@ -1,5 +1,5 @@
 %PDF-1.4
-%ReportLab-style synthetic sample
+% ReportLab-style synthetic sample
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -16,7 +16,7 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 785 >>
+<< /Length 756 >>
 stream
 BT /F2 17 Tf 48 748 Td (PAY STUB) Tj ET
 BT /F2 10 Tf 48 724 Td (Synthetic Test Case: MORT-1002) Tj ET
@@ -30,25 +30,24 @@ BT /F1 10 Tf 220 662 Td (Employed) Tj ET
 BT /F2 10 Tf 54 637 Td (Annualized income) Tj ET
 BT /F1 10 Tf 220 637 Td (CAD 120,000) Tj ET
 0.65 w 54 621 m 558 621 l S
-0.9 g 48 597 516 22 re f 0 g
-BT /F2 10 Tf 56 604 Td (Validation Note) Tj ET
+0.90 g 48 597 516 22 re f 0 g
+BT /F2 10 Tf 56 604 Td (DOCUMENT NOTES) Tj ET
 BT /F1 9 Tf 56 577 Td (Synthetic sample evidence for software testing only.) Tj ET
-0.65 w 48 539 m 564 539 l S
-BT /F2 8 Tf 48 522 Td (CONFIDENTIAL - SYNTHETIC TEST DATA) Tj ET
-BT /F1 8 Tf 474 24 Td (MORT-1002) Tj ET
+0.65 w 48 549 m 564 549 l S
+BT /F2 8 Tf 48 532 Td (SYNTHETIC TEST DATA - NOT FOR CREDIT DECISION) Tj ET
 endstream
 endobj
 xref
 0 7
 0000000000 65535 f 
-0000000043 00000 n 
-0000000092 00000 n 
-0000000149 00000 n 
-0000000285 00000 n 
-0000000382 00000 n 
-0000000484 00000 n 
+0000000044 00000 n 
+0000000093 00000 n 
+0000000150 00000 n 
+0000000286 00000 n 
+0000000383 00000 n 
+0000000485 00000 n 
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-1319
+1291
 %%EOF
