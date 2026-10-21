@@ -224,7 +224,7 @@ def _synthetic_fixture_records(case_id: str) -> list[dict[str, Any]]:
 
 @tool
 def search_mortgage_evidence(
-    case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]
+    case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]
 ) -> str:
     """Retrieve extracted mortgage document fields and evidence from Azure AI Search."""
     case_id = case_id.strip().upper()
@@ -437,6 +437,9 @@ def _comparison(case_id: str) -> dict[str, Any]:
     ]
 
     issues = [row for row in checks if row["status"] != "MATCH"]
+    # MORT-1006 is a straight-through document-validation scenario only when all checks match.
+    # Any flagged check, including one on MORT-1006, requires human adjudication.
+    human_review_required = bool(issues) or case_id != "MORT-1006"
 
     return {
         "case_id": case_id,
@@ -447,9 +450,14 @@ def _comparison(case_id: str) -> dict[str, Any]:
         "discrepancy_count": len(issues),
         "discrepancies": issues,
         "overall_status": (
-            "REVIEW_REQUIRED" if issues else "NO_DISCREPANCY_DETECTED"
+            "REVIEW_REQUIRED" if human_review_required
+            else "VALIDATED_NO_ADJUDICATION_REQUIRED"
         ),
-        "human_review_required": True,
+        "human_review_required": human_review_required,
+        "adjudication_status": "REQUIRED" if human_review_required else "NOT_REQUIRED",
+        "human_review_scope": (
+            "Flagged document-validation differences only; this is not a mortgage credit decision."
+        ),
         "decision_boundary": (
             "This comparison does not approve or decline a mortgage."
         ),
@@ -457,7 +465,7 @@ def _comparison(case_id: str) -> dict[str, Any]:
 
 
 @tool
-def get_mortgage_application(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
+def get_mortgage_application(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Get the synthetic mortgage application and document inventory."""
     record = APPLICATIONS.get(case_id.strip().upper())
     return _json(record if record else {"error": "Synthetic application not found.",
@@ -465,7 +473,7 @@ def get_mortgage_application(case_id: Annotated[str, "Synthetic case ID; use MOR
 
 
 @tool
-def extract_document_fields(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
+def extract_document_fields(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Return pre-seeded synthetic OCR/extraction results; no real OCR service is called."""
     case_id = case_id.strip().upper()
     app = APPLICATIONS.get(case_id)
@@ -480,7 +488,7 @@ def extract_document_fields(case_id: Annotated[str, "Synthetic case ID; use MORT
 
 
 @tool
-def get_internal_customer_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
+def get_internal_customer_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Get synthetic customer values from a mock internal operational API."""
     record = INTERNAL_DATA.get(case_id.strip().upper())
     return _json({"case_id": case_id.strip().upper(), **record, "mode": "MOCK_API"}
@@ -488,7 +496,7 @@ def get_internal_customer_data(case_id: Annotated[str, "Synthetic case ID; use M
 
 
 @tool
-def compare_mortgage_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
+def compare_mortgage_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Compare application, extracted document, and internal API values deterministically."""
     try:
         return _json(_comparison(case_id))
@@ -580,16 +588,33 @@ def _create_pdf(case_id: str, app: dict[str, Any], comparison: dict[str, Any]) -
     ]))
 
     story.extend([table, Spacer(1, 0.12*inch), Paragraph("Discrepancies and evidence", styles["Heading2"])])
-    for item in comparison["discrepancies"]:
-        text = (f"<b>{item['field']} — {item['status']}</b><br/>"
-                f"Application: {item['application_value']}<br/>"
-                f"Document value(s): {', '.join(map(str, item['document_values'])) or 'Not supplied'}<br/>"
-                f"Internal API: {item['internal_api_value']}<br/>Evidence: {item['evidence']}")
-        story.extend([Paragraph(text, styles["BodyText"]), Spacer(1, 0.08*inch)])
+    if comparison["discrepancies"]:
+        for item in comparison["discrepancies"]:
+            text = (f"<b>{item['field']} — {item['status']}</b><br/>"
+                    f"Application: {item['application_value']}<br/>"
+                    f"Document value(s): {', '.join(map(str, item['document_values'])) or 'Not supplied'}<br/>"
+                    f"Internal API: {item['internal_api_value']}<br/>Evidence: {item['evidence']}")
+            story.extend([Paragraph(text, styles["BodyText"]), Spacer(1, 0.08*inch)])
+    else:
+        story.append(Paragraph(
+            "No discrepancies detected across the required synthetic validation checks.",
+            styles["BodyText"],
+        ))
+    if comparison["human_review_required"]:
+        adjudication_heading = "Human adjudication required"
+        adjudication_body = (
+            "A human reviewer must assess the flagged document-validation differences. "
+            "This memo is an evidence summary only and does not make a final mortgage decision."
+        )
+    else:
+        adjudication_heading = "Human adjudication: not required for document validation"
+        adjudication_body = (
+            "All required checks matched, so this document-validation run does not require human adjudication. "
+            "This is not a mortgage approval or decline; the POC does not make credit decisions."
+        )
     story.extend([
-        Paragraph("Human adjudication required", styles["Heading2"]),
-        Paragraph("Mortgage adjudication staff must review the source documents, internal data, and flagged differences. "
-                  "This memo is an evidence summary only and does not make a final mortgage decision.", styles["BodyText"]),
+        Paragraph(adjudication_heading, styles["Heading2"]),
+        Paragraph(adjudication_body, styles["BodyText"]),
         Spacer(1, 0.1*inch),
         Paragraph("POC limitation: OCR, operational data, and FileNet storage are simulated.", styles["Italic"]),
     ])
@@ -599,7 +624,7 @@ def _create_pdf(case_id: str, app: dict[str, Any], comparison: dict[str, Any]) -
 
 
 @tool
-def generate_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
+def generate_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Generate a PDF credit memo from deterministic synthetic validation results."""
     case_id = case_id.strip().upper()
     app = APPLICATIONS.get(case_id)
@@ -611,12 +636,14 @@ def generate_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-10
         return _json({"error": str(exc), "case_id": case_id})
     path = _create_pdf(case_id, app, comparison)
     return _json({"case_id": case_id, "status": "PDF_GENERATED", "file_path": str(path),
-                  "file_name": path.name, "synthetic_data_only": True, "human_adjudication_required": True})
+                  "file_name": path.name, "synthetic_data_only": True,
+                  "human_adjudication_required": comparison["human_review_required"],
+                  "adjudication_status": comparison["adjudication_status"]})
 
 
 
 @tool
-def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]) -> str:
+def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Upload the generated PDF and metadata to Azure Blob Storage using managed identity."""
     from azure.storage.blob import BlobServiceClient, ContentSettings
 
@@ -628,6 +655,13 @@ def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 t
             "error": "PDF not found; call generate_credit_memo first.",
             "case_id": case_id,
         })
+
+    try:
+        comparison = _comparison(case_id)
+    except Exception:
+        logger.exception("Could not determine adjudication status for case %s", case_id)
+        return _json({"error": "Validation status could not be determined; memo was not uploaded.",
+                      "case_id": case_id})
 
     credential = DefaultAzureCredential()
     service = BlobServiceClient(
@@ -658,7 +692,9 @@ def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 t
             "storage_account": "stdemo131233b",
             "container": _CREDIT_MEMO_CONTAINER,
             "synthetic_data_only": True,
-            "human_adjudication_required": True,
+            "human_adjudication_required": comparison["human_review_required"],
+            "adjudication_status": comparison["adjudication_status"],
+            "human_review_scope": comparison["human_review_scope"],
             "real_filenet_called": False,
             "created_at_utc": datetime.now(timezone.utc).isoformat(),
         }
@@ -694,7 +730,7 @@ def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 t
 
 @tool
 def get_mock_filenet_record(
-    case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1005."]
+    case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]
 ) -> str:
     """Retrieve the persisted mock FileNet record from local JSON metadata."""
     case_id = case_id.strip().upper()
@@ -758,7 +794,9 @@ def _system_prompt(state: AssistantState) -> str:
         "get_mortgage_application, extract_document_fields, get_internal_customer_data, search_mortgage_evidence, compare_mortgage_data, "
         "generate_credit_memo, save_credit_memo, get_mock_filenet_record. Do not claim tools ran unless results "
         "confirm it. Deterministic comparison results are authoritative; do not alter them. Explain discrepancies "
-        "and evidence. Always say human adjudication is required. Never approve or decline a mortgage. Available synthetic test cases are MORT-1001 through MORT-1005. Default case "
+        "and evidence. State adjudication requirements from deterministic results. For MORT-1006, if every check matches, "
+        "explain that human adjudication is not required for document validation only. Any flagged check requires human "
+        "review. Never approve or decline a mortgage. Available synthetic test cases are MORT-1001 through MORT-1006. Default case "
         "is MORT-1001. When asked to generate a memo, generate and simulate saving it unless asked not to."
     )
 
