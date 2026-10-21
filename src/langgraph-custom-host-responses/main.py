@@ -250,12 +250,16 @@ def search_mortgage_evidence(
         )
 
         records = [dict(record) for record in results]
-        if not records and case_id != _CASE:
+        used_synthetic_fallback = not records and case_id != _CASE
+        if used_synthetic_fallback:
             records = _synthetic_fixture_records(case_id)
 
         return _json({
             "case_id": case_id,
-            "source": "Azure AI Search",
+            "source": (
+                "Synthetic fixture fallback (not indexed)"
+                if used_synthetic_fallback else "Azure AI Search"
+            ),
             "index_name": os.environ.get(
                 "AZURE_SEARCH_INDEX_NAME",
                 "mortgage-document-evidence",
@@ -294,7 +298,8 @@ def _comparison(case_id: str) -> dict[str, Any]:
     ))
 
     records = [dict(item) for item in results]
-    if not records and case_id != _CASE:
+    used_synthetic_fallback = not records and case_id != _CASE
+    if used_synthetic_fallback:
         records = _synthetic_fixture_records(case_id)
     if not records:
         raise ValueError(
@@ -443,8 +448,14 @@ def _comparison(case_id: str) -> dict[str, Any]:
 
     return {
         "case_id": case_id,
-        "comparison_mode": "DETERMINISTIC_RULES_WITH_AZURE_AI_SEARCH",
-        "evidence_source": "Azure AI Search",
+        "comparison_mode": (
+            "DETERMINISTIC_RULES_WITH_SYNTHETIC_FIXTURE_FALLBACK"
+            if used_synthetic_fallback else "DETERMINISTIC_RULES_WITH_AZURE_AI_SEARCH"
+        ),
+        "evidence_source": (
+            "Synthetic fixture fallback (not indexed)"
+            if used_synthetic_fallback else "Azure AI Search"
+        ),
         "indexed_record_count": len(records),
         "checks": checks,
         "discrepancy_count": len(issues),
