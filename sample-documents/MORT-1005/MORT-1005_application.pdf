@@ -1,5 +1,5 @@
 %PDF-1.4
-%ASCII ReportLab-style synthetic document
+%MORT-1001 matching visual style
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -16,45 +16,57 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 1404 >>
+<< /Length 2497 >>
 stream
-BT /F2 15 Tf 194 750 Td (Mortgage Application Summary) Tj ET
-BT /F1 9 Tf 72 724 Td (Synthetic document - Case ID: MORT-1005 - Document ID: DOC-APP-1005) Tj ET
-BT /F2 11 Tf 72 672 Td (Applicant and case) Tj ET
-BT /F1 10 Tf 85 646 Td (Applicant name) Tj ET
-BT /F1 10 Tf 226 646 Td (Jordan Example 1005 \(fictional\)) Tj ET
-BT /F1 10 Tf 85 622 Td (Case ID) Tj ET
-BT /F1 10 Tf 226 622 Td (MORT-1005) Tj ET
-BT /F1 10 Tf 85 598 Td (Application date) Tj ET
-BT /F1 10 Tf 226 598 Td (2026-10-01) Tj ET
-BT /F1 10 Tf 85 574 Td (Requested mortgage amount) Tj ET
-BT /F1 10 Tf 226 574 Td (CAD 375,000) Tj ET
-BT /F2 11 Tf 72 532 Td (Property and financial declarations) Tj ET
-BT /F1 10 Tf 85 506 Td (Property value) Tj ET
-BT /F1 10 Tf 226 506 Td (CAD 510,000) Tj ET
-BT /F1 10 Tf 85 482 Td (Declared annual income) Tj ET
-BT /F1 10 Tf 226 482 Td (CAD 105,000) Tj ET
-BT /F1 10 Tf 85 458 Td (Declared monthly liabilities) Tj ET
-BT /F1 10 Tf 226 458 Td (CAD 600) Tj ET
-BT /F1 10 Tf 85 434 Td (Declared employment status) Tj ET
-BT /F1 10 Tf 226 434 Td (Employed) Tj ET
-BT /F2 10 Tf 72 390 Td (Applicant declaration) Tj ET
-BT /F1 9 Tf 72 370 Td (The information above is fictional and prepared solely for testing a mortgage-document validation) Tj ET
-BT /F1 9 Tf 72 357 Td (workflow. No real applicant or property is represented.) Tj ET
-BT /F2 8 Tf 72 72 Td (SYNTHETIC TEST DATA ONLY - NOT A REAL MORTGAGE APPLICATION.) Tj ET
+0 0 0 rg BT /F2 15 Tf 185.536 723.5 Td (Mortgage Application Summary) Tj ET
+0 0 0 rg BT /F1 9.25 Tf 52.8 698.73 Td (Synthetic document - Case ID: MORT-1005 - Document ID: DOC-APP-1005) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 667.523 Td (Applicant and case) Tj ET
+0.917647 0.941176 0.964706 rg 52.8 565.8 151.2 96 re f
+0.721569 0.760784 0.800000 RG 0.45 w 52.8 565.8 482.4 96 re S
+204 565.8 m 204 661.8 l S
+52.8 637.8 m 535.2 637.8 l S
+52.8 613.8 m 535.2 613.8 l S
+52.8 589.8 m 535.2 589.8 l S
+0 0 0 rg BT /F1 10 Tf 59.8 643.7299999999999 Td (Applicant name) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 643.7299999999999 Td (Jordan Example 1005 \(fictional\)) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 619.7299999999999 Td (Case ID) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 619.7299999999999 Td (MORT-1005) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 595.7299999999999 Td (Application date) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 595.7299999999999 Td (2026-10-01) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 571.7299999999999 Td (Requested mortgage amount) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 571.7299999999999 Td (CAD 375,000) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 539.523 Td (Property and financial declarations) Tj ET
+0.917647 0.941176 0.964706 rg 52.8 437.79999999999995 151.2 96 re f
+0.721569 0.760784 0.800000 RG 0.45 w 52.8 437.79999999999995 482.4 96 re S
+204 437.79999999999995 m 204 533.8 l S
+52.8 509.79999999999995 m 535.2 509.79999999999995 l S
+52.8 485.79999999999995 m 535.2 485.79999999999995 l S
+52.8 461.79999999999995 m 535.2 461.79999999999995 l S
+0 0 0 rg BT /F1 10 Tf 59.8 515.7299999999999 Td (Property value) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 515.7299999999999 Td (CAD 510,000) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 491.7299999999999 Td (Declared annual income) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 491.7299999999999 Td (CAD 105,000) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 467.7299999999999 Td (Declared monthly liabilities) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 467.7299999999999 Td (CAD 600) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 443.7299999999999 Td (Declared employment status) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 443.7299999999999 Td (Employed) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 411.523 Td (Applicant declaration) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 392.73 Td (The information above is fictional and prepared solely for testing a mortgage-document validation workflow. No) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 380.73 Td (real applicant or property is represented.) Tj ET
+0.40 0.40 0.40 rg BT /F1 8 Tf 52.8 352.144 Td (SYNTHETIC TEST DATA ONLY - NOT A REAL MORTGAGE APPLICATION.) Tj ET
 endstream
 endobj
 xref
 0 7
 0000000000 65535 f 
-0000000051 00000 n 
-0000000100 00000 n 
-0000000157 00000 n 
-0000000293 00000 n 
-0000000390 00000 n 
-0000000492 00000 n 
+0000000042 00000 n 
+0000000091 00000 n 
+0000000148 00000 n 
+0000000284 00000 n 
+0000000381 00000 n 
+0000000483 00000 n 
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-1947
+3031
 %%EOF
