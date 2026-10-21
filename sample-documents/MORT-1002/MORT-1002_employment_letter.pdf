@@ -1,5 +1,5 @@
 %PDF-1.4
-%Same form layout family as the MORT-1001 samples
+%MORT-1001 matching visual style
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -16,13 +16,13 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 1868 >>
+<< /Length 1819 >>
 stream
 0 0 0 rg BT /F2 15 Tf 187.752 723.5 Td (Employment Verification Letter) Tj ET
 0 0 0 rg BT /F1 9.25 Tf 52.8 698.73 Td (Synthetic document - Case ID: MORT-1002 - Document ID: DOC-EMP-1002) Tj ET
 0 0 0 rg BT /F2 11 Tf 52.8 667.523 Td (Employment verification) Tj ET
 0.917647 0.941176 0.964706 rg 52.8 541.8 151.2 120 re f
-0.721569 0.760784 0.800000 RG 0.45 w 52.8 541.8 482.40000000000003 120 re S
+0.721569 0.760784 0.800000 RG 0.45 w 52.8 541.8 482.4 120 re S
 204 541.8 m 204 661.8 l S
 52.8 637.8 m 535.2 637.8 l S
 52.8 613.8 m 535.2 613.8 l S
@@ -39,8 +39,8 @@ stream
 0 0 0 rg BT /F1 10 Tf 59.8 547.7299999999999 Td (Effective date) Tj ET
 0 0 0 rg BT /F1 10 Tf 211 547.7299999999999 Td (2026-01-15) Tj ET
 0 0 0 rg BT /F2 11 Tf 52.8 515.523 Td (Verification statement) Tj ET
-0 0 0 rg BT /F1 10 Tf 52.8 496.73 Td (This letter confirms that Jordan Example 1002 is employed in a permanent full-time position with) Tj ET
-0 0 0 rg BT /F1 10 Tf 52.8 484.73 Td (Example Manufacturing 1002 Ltd. at an annual salary of CAD 95,000.) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 496.73 Td (This letter confirms that Jordan Example 1002 is employed by Example Manufacturing 1002 Ltd.) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 484.73 Td (at an annual salary of CAD 95,000.) Tj ET
 0 0 0 rg BT /F2 11 Tf 52.8 458.523 Td (Source statement) Tj ET
 0 0 0 rg BT /F1 10 Tf 52.8 439.73 Td (Synthetic employment letter: annual salary is CAD 95,000.) Tj ET
 0.40 0.40 0.40 rg BT /F1 8 Tf 52.8 411.144 Td (SYNTHETIC TEST DATA ONLY - NOT A REAL EMPLOYMENT LETTER.) Tj ET
@@ -49,14 +49,14 @@ endobj
 xref
 0 7
 0000000000 65535 f 
-0000000059 00000 n 
-0000000108 00000 n 
-0000000165 00000 n 
-0000000301 00000 n 
-0000000398 00000 n 
-0000000500 00000 n 
+0000000042 00000 n 
+0000000091 00000 n 
+0000000148 00000 n 
+0000000284 00000 n 
+0000000381 00000 n 
+0000000483 00000 n 
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-2419
+2353
 %%EOF
