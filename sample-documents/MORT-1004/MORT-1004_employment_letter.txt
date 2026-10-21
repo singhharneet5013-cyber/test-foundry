@@ -1,5 +1,0 @@
-Employment Letter — Synthetic Test Case MORT-1004
-Employer: Synthetic Employer 1004
-Employment status: employed
-Annual salary: CAD 110,000
-This is fictional sample evidence for software testing only.
