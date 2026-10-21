@@ -1,8 +1,0 @@
-{
-  "case_id": "MORT-1004",
-  "document_id": "DOC-PAY-1004",
-  "synthetic_only": true,
-  "document_type": "pay_stub",
-  "annual_income_cad": 110000,
-  "employment_status": "employed"
-}
