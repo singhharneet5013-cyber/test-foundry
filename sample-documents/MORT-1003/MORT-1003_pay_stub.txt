@@ -1,0 +1,5 @@
+Pay Stub — Synthetic Test Case MORT-1003
+Employer: Synthetic Employer 1003
+Employment status: employed
+Annualized income: CAD 100,000
+This is fictional sample evidence for software testing only.
