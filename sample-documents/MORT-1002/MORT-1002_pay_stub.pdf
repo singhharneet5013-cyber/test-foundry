@@ -16,25 +16,34 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 756 >>
+<< /Length 335 >>
 stream
-BT /F2 17 Tf 48 748 Td (PAY STUB) Tj ET
-BT /F2 10 Tf 48 724 Td (Synthetic Test Case: MORT-1002) Tj ET
-0.65 w 48 712 m 564 712 l S
-BT /F2 10 Tf 54 687 Td (Employer) Tj ET
-BT /F1 10 Tf 220 687 Td (Synthetic Employer 1002) Tj ET
-0.65 w 54 671 m 558 671 l S
-BT /F2 10 Tf 54 662 Td (Employment status) Tj ET
-BT /F1 10 Tf 220 662 Td (Employed) Tj ET
-0.65 w 54 646 m 558 646 l S
-BT /F2 10 Tf 54 637 Td (Annualized income) Tj ET
-BT /F1 10 Tf 220 637 Td (CAD 120,000) Tj ET
-0.65 w 54 621 m 558 621 l S
-0.90 g 48 597 516 22 re f 0 g
-BT /F2 10 Tf 56 604 Td (DOCUMENT NOTES) Tj ET
-BT /F1 9 Tf 56 577 Td (Synthetic sample evidence for software testing only.) Tj ET
-0.65 w 48 549 m 564 549 l S
-BT /F2 8 Tf 48 532 Td (SYNTHETIC TEST DATA - NOT FOR CREDIT DECISION) Tj ET
+BT
+/F2 17 Tf
+48 748 Td
+(PAY STUB) Tj
+/F2 10 Tf
+0 -24 Td
+(Synthetic Test Case: MORT-1002) Tj
+/F2 10 Tf
+0 -38 Td
+(Employer) Tj
+/F1 10 Tf
+172 0 Td
+(Synthetic Employer 1002) Tj
+-172 -25 Td
+/F2 10 Tf
+(Employment status) Tj
+/F1 10 Tf
+172 0 Td
+(Employed) Tj
+-172 -25 Td
+/F2 10 Tf
+(Annualized income) Tj
+/F1 10 Tf
+172 0 Td
+(CAD 120,000) Tj
+ET
 endstream
 endobj
 xref
@@ -49,5 +58,5 @@ xref
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-1291
+870
 %%EOF
