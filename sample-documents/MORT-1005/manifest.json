@@ -1,0 +1,47 @@
+{
+  "case_id": "MORT-1005",
+  "synthetic_only": true,
+  "scenario": "employment_status_conflict",
+  "documents": [
+    {
+      "document_id": "DOC-APP-1005",
+      "file": "MORT-1005_application.json",
+      "type": "mortgage_application"
+    },
+    {
+      "document_id": "DOC-PAY-1005",
+      "file": "MORT-1005_pay_stub.json",
+      "type": "pay_stub"
+    },
+    {
+      "document_id": "DOC-EMP-1005",
+      "file": "MORT-1005_employment_letter.json",
+      "type": "employment_letter"
+    }
+  ],
+  "ground_truth": {
+    "application": {
+      "annual_income_cad": 105000,
+      "monthly_liabilities_cad": 600,
+      "employment_status": "employed"
+    },
+    "pay_stub": {
+      "annual_income_cad": 105000,
+      "employment_status": "employed"
+    },
+    "employment_letter": {
+      "annual_income_cad": 105000,
+      "employment_status": "contract"
+    },
+    "internal_reference": {
+      "annual_income_cad": 105000,
+      "monthly_liabilities_cad": 600,
+      "employment_status": "terminated"
+    }
+  },
+  "expected_deterministic_outcome": "REVIEW_REQUIRED",
+  "expected_flags": [
+    "employment_status"
+  ],
+  "safety_note": "Synthetic test data only. Human adjudication is required; do not automatically approve or decline."
+}
