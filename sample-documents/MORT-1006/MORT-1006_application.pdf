@@ -1,0 +1,57 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 598 >>
+stream
+BT
+/F1 11 Tf
+50 790 Td
+14 TL
+(Mortgage Application - Synthetic Test Case MORT-1006) Tj
+T*
+(Applicant: SYNTHETIC APPLICANT 1006) Tj
+T*
+(Requested mortgage: CAD 375,000) Tj
+T*
+(Property value: CAD 510,000) Tj
+T*
+(Declared annual income: CAD 105,000) Tj
+T*
+(Declared monthly liabilities: CAD 600) Tj
+T*
+(Declared employment status: employed) Tj
+T*
+(Supporting documents listed: pay stub and employment letter) Tj
+T*
+(All data is consistent with the accompanying synthetic documents and mock internal) Tj
+T*
+(record.) Tj
+T*
+(All data in this document is fictional and for software testing only.) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+959
+%%EOF
