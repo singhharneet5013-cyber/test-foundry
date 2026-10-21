@@ -126,7 +126,7 @@ def _evidence_for_field(text: str, field: str) -> str | None:
             rf"{re.escape(label)}\s*\n\s*(?:CAD\s*)?[\d,]+"
         ) if field != "employment_status" else (
             rf"{re.escape(label)}\s*\n\s*"
-            rf"(?:Permanent full-time|Employed)"
+            rf"(?:Permanent full-time|Employed|Contract|Terminated)"
         )
 
         match = re.search(pattern, text, re.IGNORECASE)
