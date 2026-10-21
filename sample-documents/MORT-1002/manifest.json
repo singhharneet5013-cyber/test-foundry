@@ -7,22 +7,19 @@
       "document_id": "DOC-APP-1002",
       "file": "MORT-1002_application.pdf",
       "type": "mortgage_application",
-      "fixture_file": "MORT-1002_application.json",
-      "text_file": "MORT-1002_application.txt"
+      "fixture_file": "MORT-1002_application.json"
     },
     {
       "document_id": "DOC-PAY-1002",
       "file": "MORT-1002_pay_stub.pdf",
       "type": "pay_stub",
-      "fixture_file": "MORT-1002_pay_stub.json",
-      "text_file": "MORT-1002_pay_stub.txt"
+      "fixture_file": "MORT-1002_pay_stub.json"
     },
     {
       "document_id": "DOC-EMP-1002",
       "file": "MORT-1002_employment_letter.pdf",
       "type": "employment_letter",
-      "fixture_file": "MORT-1002_employment_letter.json",
-      "text_file": "MORT-1002_employment_letter.txt"
+      "fixture_file": "MORT-1002_employment_letter.json"
     }
   ],
   "ground_truth": {
