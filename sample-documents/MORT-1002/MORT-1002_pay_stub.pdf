@@ -1,4 +1,5 @@
 %PDF-1.4
+%ReportLab-style synthetic sample
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -6,40 +7,48 @@ endobj
 << /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
 endobj
 4 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 5 0 obj
-<< /Length 264 >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 785 >>
 stream
-BT
-/F1 11 Tf
-50 790 Td
-14 TL
-(Pay Stub - Synthetic Test Case MORT-1002) Tj
-T*
-(Employer: Synthetic Employer 1002) Tj
-T*
-(Employment status: employed) Tj
-T*
-(Annualized income: CAD 120,000) Tj
-T*
-(This is fictional sample evidence for software testing only.) Tj
-ET
+BT /F2 17 Tf 48 748 Td (PAY STUB) Tj ET
+BT /F2 10 Tf 48 724 Td (Synthetic Test Case: MORT-1002) Tj ET
+0.65 w 48 712 m 564 712 l S
+BT /F2 10 Tf 54 687 Td (Employer) Tj ET
+BT /F1 10 Tf 220 687 Td (Synthetic Employer 1002) Tj ET
+0.65 w 54 671 m 558 671 l S
+BT /F2 10 Tf 54 662 Td (Employment status) Tj ET
+BT /F1 10 Tf 220 662 Td (Employed) Tj ET
+0.65 w 54 646 m 558 646 l S
+BT /F2 10 Tf 54 637 Td (Annualized income) Tj ET
+BT /F1 10 Tf 220 637 Td (CAD 120,000) Tj ET
+0.65 w 54 621 m 558 621 l S
+0.9 g 48 597 516 22 re f 0 g
+BT /F2 10 Tf 56 604 Td (Validation Note) Tj ET
+BT /F1 9 Tf 56 577 Td (Synthetic sample evidence for software testing only.) Tj ET
+0.65 w 48 539 m 564 539 l S
+BT /F2 8 Tf 48 522 Td (CONFIDENTIAL - SYNTHETIC TEST DATA) Tj ET
+BT /F1 8 Tf 474 24 Td (MORT-1002) Tj ET
 endstream
 endobj
 xref
-0 6
+0 7
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000241 00000 n 
-0000000311 00000 n 
+0000000043 00000 n 
+0000000092 00000 n 
+0000000149 00000 n 
+0000000285 00000 n 
+0000000382 00000 n 
+0000000484 00000 n 
 trailer
-<< /Size 6 /Root 1 0 R >>
+<< /Size 7 /Root 1 0 R >>
 startxref
-625
+1319
 %%EOF
