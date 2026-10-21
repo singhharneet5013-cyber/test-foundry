@@ -49,7 +49,7 @@ class AssistantState(TypedDict, total=False):
     locale: str
 
 
-# Synthetic-only sample data. Replace only with approved test data in later phases.
+# Synthetic-only sample data. MORT-1001 is intentionally unchanged.
 APPLICATIONS: dict[str, dict[str, Any]] = {
     _CASE: {
         "case_id": _CASE, "applicant_name": "SYNTHETIC APPLICANT",
@@ -62,7 +62,56 @@ APPLICATIONS: dict[str, dict[str, Any]] = {
             {"document_id": "DOC-EMP-1001", "document_type": "Employment letter",
              "file_name": "synthetic_employment_letter.txt", "source": "Mock FileNet"},
         ],
-    }
+    },
+    "MORT-1002": {
+        "case_id": "MORT-1002", "applicant_name": "SYNTHETIC APPLICANT 1002",
+        "application_type": "Residential mortgage", "requested_mortgage_cad": 400000,
+        "property_value_cad": 550000, "declared_annual_income_cad": 120000,
+        "declared_monthly_liabilities_cad": 850, "declared_employment_status": "employed",
+        "documents": [
+            {"document_id": "DOC-PAY-1002", "document_type": "Pay stub", "file_name": "MORT-1002_pay_stub.json", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1002", "document_type": "Employment letter", "file_name": "MORT-1002_employment_letter.json", "source": "Mock FileNet"},
+        ],
+    },
+    "MORT-1003": {
+        "case_id": "MORT-1003", "applicant_name": "SYNTHETIC APPLICANT 1003",
+        "application_type": "Residential mortgage", "requested_mortgage_cad": 350000,
+        "property_value_cad": 480000, "declared_annual_income_cad": 100000,
+        "declared_monthly_liabilities_cad": 500, "declared_employment_status": "employed",
+        "documents": [
+            {"document_id": "DOC-PAY-1003", "document_type": "Pay stub", "file_name": "MORT-1003_pay_stub.json", "source": "Mock FileNet"},
+        ],
+    },
+    "MORT-1004": {
+        "case_id": "MORT-1004", "applicant_name": "SYNTHETIC APPLICANT 1004",
+        "application_type": "Residential mortgage", "requested_mortgage_cad": 450000,
+        "property_value_cad": 620000, "declared_annual_income_cad": 110000,
+        "declared_monthly_liabilities_cad": 700, "declared_employment_status": "employed",
+        "documents": [
+            {"document_id": "DOC-PAY-1004", "document_type": "Pay stub", "file_name": "MORT-1004_pay_stub.json", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1004", "document_type": "Employment letter", "file_name": "MORT-1004_employment_letter.json", "source": "Mock FileNet"},
+        ],
+    },
+    "MORT-1005": {
+        "case_id": "MORT-1005", "applicant_name": "SYNTHETIC APPLICANT 1005",
+        "application_type": "Residential mortgage", "requested_mortgage_cad": 375000,
+        "property_value_cad": 510000, "declared_annual_income_cad": 105000,
+        "declared_monthly_liabilities_cad": 600, "declared_employment_status": "employed",
+        "documents": [
+            {"document_id": "DOC-PAY-1005", "document_type": "Pay stub", "file_name": "MORT-1005_pay_stub.json", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1005", "document_type": "Employment letter", "file_name": "MORT-1005_employment_letter.json", "source": "Mock FileNet"},
+        ],
+    },
+    "MORT-1006": {
+        "case_id": "MORT-1006", "applicant_name": "SYNTHETIC APPLICANT 1006",
+        "application_type": "Residential mortgage", "requested_mortgage_cad": 375000,
+        "property_value_cad": 510000, "declared_annual_income_cad": 105000,
+        "declared_monthly_liabilities_cad": 600, "declared_employment_status": "employed",
+        "documents": [
+            {"document_id": "DOC-PAY-1006", "document_type": "Pay stub", "file_name": "MORT-1006_pay_stub.json", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1006", "document_type": "Employment letter", "file_name": "MORT-1006_employment_letter.json", "source": "Mock FileNet"},
+        ],
+    },
 }
 DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
     "DOC-PAY-1001": {"document_type": "Pay stub", "employer": "Example North Ltd. (synthetic)",
@@ -72,11 +121,48 @@ DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
     "DOC-EMP-1001": {"document_type": "Employment letter", "employer": "Example North Ltd. (synthetic)",
                      "annual_income_cad": 108000, "employment_status": "permanent full-time",
                      "evidence": "Synthetic employment letter: annual salary is CAD 108,000."},
+    "DOC-PAY-1002": {"document_type": "Pay stub", "employer": "Synthetic Employer 1002",
+                     "annual_income_cad": 120000, "employment_status": "employed",
+                     "evidence": "Synthetic pay stub: annualized income is CAD 120,000."},
+    "DOC-EMP-1002": {"document_type": "Employment letter", "employer": "Synthetic Employer 1002",
+                     "annual_income_cad": 95000, "employment_status": "employed",
+                     "evidence": "Synthetic employment letter: annual salary is CAD 95,000."},
+    "DOC-PAY-1003": {"document_type": "Pay stub", "employer": "Synthetic Employer 1003",
+                     "annual_income_cad": 100000, "employment_status": "employed",
+                     "evidence": "Synthetic pay stub: annualized income is CAD 100,000."},
+    "DOC-PAY-1004": {"document_type": "Pay stub", "employer": "Synthetic Employer 1004",
+                     "annual_income_cad": 110000, "employment_status": "employed",
+                     "evidence": "Synthetic pay stub: annualized income is CAD 110,000."},
+    "DOC-EMP-1004": {"document_type": "Employment letter", "employer": "Synthetic Employer 1004",
+                     "annual_income_cad": 110000, "employment_status": "employed",
+                     "evidence": "Synthetic employment letter: annual salary is CAD 110,000."},
+    "DOC-PAY-1005": {"document_type": "Pay stub", "employer": "Synthetic Employer 1005",
+                     "annual_income_cad": 105000, "employment_status": "employed",
+                     "evidence": "Synthetic pay stub: annualized income is CAD 105,000."},
+    "DOC-EMP-1005": {"document_type": "Employment letter", "employer": "Synthetic Employer 1005",
+                     "annual_income_cad": 105000, "employment_status": "contract",
+                     "evidence": "Synthetic employment letter: status is contract."},
+    "DOC-PAY-1006": {"document_type": "Pay stub", "employer": "Synthetic Employer 1006",
+                     "annual_income_cad": 105000, "employment_status": "employed",
+                     "evidence": "Synthetic pay stub: annualized income is CAD 105,000."},
+    "DOC-EMP-1006": {"document_type": "Employment letter", "employer": "Synthetic Employer 1006",
+                     "annual_income_cad": 105000, "employment_status": "employed",
+                     "evidence": "Synthetic employment letter: annual salary is CAD 105,000."},
 }
 INTERNAL_DATA: dict[str, dict[str, Any]] = {
     _CASE: {"customer_reference": "SYN-CUST-1001", "annual_income_cad": 120000,
             "monthly_liabilities_cad": 1450, "employment_status": "employed",
-            "source_system": "Mock Internal Customer API"}
+            "source_system": "Mock Internal Customer API"},
+    "MORT-1002": {"customer_reference": "SYN-CUST-1002", "annual_income_cad": 120000,
+                  "monthly_liabilities_cad": 850, "employment_status": "employed", "source_system": "Mock Internal Customer API"},
+    "MORT-1003": {"customer_reference": "SYN-CUST-1003", "annual_income_cad": 100000,
+                  "monthly_liabilities_cad": 500, "employment_status": "employed", "source_system": "Mock Internal Customer API"},
+    "MORT-1004": {"customer_reference": "SYN-CUST-1004", "annual_income_cad": 110000,
+                  "monthly_liabilities_cad": 1300, "employment_status": "employed", "source_system": "Mock Internal Customer API"},
+    "MORT-1005": {"customer_reference": "SYN-CUST-1005", "annual_income_cad": 105000,
+                  "monthly_liabilities_cad": 600, "employment_status": "terminated", "source_system": "Mock Internal Customer API"},
+    "MORT-1006": {"customer_reference": "SYN-CUST-1006", "annual_income_cad": 105000,
+                  "monthly_liabilities_cad": 600, "employment_status": "employed", "source_system": "Mock Internal Customer API"},
 }
 MOCK_FILENET_RECORDS: dict[str, dict[str, Any]] = {}
 
