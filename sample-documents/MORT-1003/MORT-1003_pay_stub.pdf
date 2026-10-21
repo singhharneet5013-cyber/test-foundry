@@ -1,5 +1,5 @@
 %PDF-1.4
-%MORT-1001 matching visual style
+%MORT-1001 aligned form template
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -16,40 +16,40 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 2118 >>
+<< /Length 1990 >>
 stream
-0 0 0 rg BT /F2 15 Tf 250.872 723.5 Td (Pay Statement) Tj ET
-0 0 0 rg BT /F1 9.25 Tf 52.8 698.73 Td (Synthetic document - Case ID: MORT-1003 - Document ID: DOC-PAY-1003) Tj ET
-0 0 0 rg BT /F2 11 Tf 52.8 667.523 Td (Employee and employer) Tj ET
+0 0 0 rg BT /F2 16 Tf 250.872 726.8 Td (Pay Statement) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 700.8 Td (Synthetic document - Case ID: MORT-1003 - Document ID: DOC-PAY-1003) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 669.8 Td (Employee and employer) Tj ET
 0.917647 0.941176 0.964706 rg 52.8 565.8 151.2 96 re f
 0.721569 0.760784 0.800000 RG 0.45 w 52.8 565.8 482.4 96 re S
 204 565.8 m 204 661.8 l S
 52.8 637.8 m 535.2 637.8 l S
 52.8 613.8 m 535.2 613.8 l S
 52.8 589.8 m 535.2 589.8 l S
-0 0 0 rg BT /F1 10 Tf 59.8 643.7299999999999 Td (Employee) Tj ET
-0 0 0 rg BT /F1 10 Tf 211 643.7299999999999 Td (Jordan Example 1003 \(fictional\)) Tj ET
-0 0 0 rg BT /F1 10 Tf 59.8 619.7299999999999 Td (Employer) Tj ET
-0 0 0 rg BT /F1 10 Tf 211 619.7299999999999 Td (Example Manufacturing 1003 Ltd. \(fictional\)) Tj ET
-0 0 0 rg BT /F1 10 Tf 59.8 595.7299999999999 Td (Pay period) Tj ET
-0 0 0 rg BT /F1 10 Tf 211 595.7299999999999 Td (2026-09-16 to 2026-09-30) Tj ET
-0 0 0 rg BT /F1 10 Tf 59.8 571.7299999999999 Td (Employment status) Tj ET
-0 0 0 rg BT /F1 10 Tf 211 571.7299999999999 Td (Employed) Tj ET
-0 0 0 rg BT /F2 11 Tf 52.8 539.523 Td (Compensation summary) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 645.8 Td (Employee) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 645.8 Td (Jordan Example 1003 \(fictional\)) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 621.8 Td (Employer) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 621.8 Td (Example Manufacturing 1003 Ltd. \(fictional\)) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 597.8 Td (Pay period) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 597.8 Td (2026-09-16 to 2026-09-30) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 573.8 Td (Employment status) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 573.8 Td (Employed) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 541.8 Td (Compensation summary) Tj ET
 0.917647 0.941176 0.964706 rg 52.8 461.79999999999995 151.2 72 re f
 0.721569 0.760784 0.800000 RG 0.45 w 52.8 461.79999999999995 482.4 72 re S
 204 461.79999999999995 m 204 533.8 l S
 52.8 509.79999999999995 m 535.2 509.79999999999995 l S
 52.8 485.79999999999995 m 535.2 485.79999999999995 l S
-0 0 0 rg BT /F1 10 Tf 59.8 515.7299999999999 Td (Annualized income) Tj ET
-0 0 0 rg BT /F1 10 Tf 211 515.7299999999999 Td (CAD 100,000) Tj ET
-0 0 0 rg BT /F1 10 Tf 59.8 491.7299999999999 Td (Gross monthly equivalent) Tj ET
-0 0 0 rg BT /F1 10 Tf 211 491.7299999999999 Td (CAD 8,333) Tj ET
-0 0 0 rg BT /F1 10 Tf 59.8 467.7299999999999 Td (Currency) Tj ET
-0 0 0 rg BT /F1 10 Tf 211 467.7299999999999 Td (CAD) Tj ET
-0 0 0 rg BT /F2 11 Tf 52.8 435.523 Td (Source statement) Tj ET
-0 0 0 rg BT /F1 10 Tf 52.8 416.73 Td (Synthetic pay stub: annualized income is CAD 100,000.) Tj ET
-0.40 0.40 0.40 rg BT /F1 8 Tf 52.8 388.144 Td (SYNTHETIC TEST DATA ONLY - NOT A REAL PAY STATEMENT.) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 517.8 Td (Annualized income) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 517.8 Td (CAD 100,000) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 493.79999999999995 Td (Gross monthly equivalent) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 493.79999999999995 Td (CAD 8,333) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 469.79999999999995 Td (Currency) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 469.79999999999995 Td (CAD) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 437.8 Td (Source statement) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 418.8 Td (Synthetic pay stub: annualized income is CAD 100,000.) Tj ET
+0.40 0.40 0.40 rg BT /F1 8 Tf 52.8 389.8 Td (SYNTHETIC TEST DATA ONLY - NOT A REAL PAY STATEMENT.) Tj ET
 endstream
 endobj
 xref
@@ -64,5 +64,5 @@ xref
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-2652
+2524
 %%EOF
