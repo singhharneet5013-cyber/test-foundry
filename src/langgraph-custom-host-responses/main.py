@@ -99,6 +99,43 @@ def _build_search_client() -> SearchClient:
     )
 
 
+def _synthetic_fixture_records(case_id: str) -> list[dict[str, Any]]:
+    """Build deterministic, explicitly synthetic evidence records for added demo cases."""
+    app = APPLICATIONS.get(case_id)
+    if not app or case_id == _CASE:
+        return []
+    suffix = case_id[-4:]
+    records: list[dict[str, Any]] = []
+
+    def add(document_id: str, document_type: str, field_name: str, field_value: Any,
+            evidence_text: str) -> None:
+        numeric = field_value if isinstance(field_value, (int, float)) and not isinstance(field_value, bool) else None
+        records.append({
+            "case_id": case_id, "document_id": document_id,
+            "document_type": document_type, "field_name": field_name,
+            "field_value": str(field_value) if field_value is not None else None,
+            "field_value_number": numeric, "evidence": evidence_text,
+            "synthetic_only": True, "extraction_mode": "SYNTHETIC_FIXTURE",
+        })
+
+    app_doc = f"DOC-APP-{suffix}"
+    for field, val in [
+        ("annual_income_cad", app["declared_annual_income_cad"]),
+        ("monthly_liabilities_cad", app["declared_monthly_liabilities_cad"]),
+        ("employment_status", app["declared_employment_status"]),
+    ]:
+        add(app_doc, "Mortgage application", field, val, f"Synthetic application declares {field}={val}.")
+
+    for doc in app["documents"]:
+        fields = DOCUMENT_FIELDS.get(doc["document_id"], {})
+        for field in ("annual_income_cad", "monthly_liabilities_cad", "employment_status"):
+            if field in fields:
+                add(doc["document_id"], doc["document_type"], field, fields[field],
+                    fields.get("evidence", f"Synthetic {doc['document_type']} evidence for {field}."))
+
+    return records
+
+
 @tool
 def search_mortgage_evidence(
     case_id: Annotated[str, "Synthetic mortgage case ID; use MORT-1001."]
@@ -127,6 +164,8 @@ def search_mortgage_evidence(
         )
 
         records = [dict(record) for record in results]
+        if not records and case_id != _CASE:
+            records = _synthetic_fixture_records(case_id)
 
         return _json({
             "case_id": case_id,
@@ -168,12 +207,13 @@ def _comparison(case_id: str) -> dict[str, Any]:
         top=100,
     ))
 
-    if not results:
+    records = [dict(item) for item in results]
+    if not records and case_id != _CASE:
+        records = _synthetic_fixture_records(case_id)
+    if not records:
         raise ValueError(
             f"No indexed evidence found for {case_id}; comparison cannot proceed."
         )
-
-    records = [dict(item) for item in results]
 
     if any(
         record.get("synthetic_only") is not True
@@ -188,9 +228,10 @@ def _comparison(case_id: str) -> dict[str, Any]:
         field_name = record["field_name"]
         indexed.setdefault(document_id, {})[field_name] = record
 
-    application = indexed.get("DOC-APP-1001", {})
-    pay_stub = indexed.get("DOC-PAY-1001", {})
-    employment_letter = indexed.get("DOC-EMP-1001", {})
+    suffix = case_id[-4:]
+    application = indexed.get(f"DOC-APP-{suffix}", {})
+    pay_stub = indexed.get(f"DOC-PAY-{suffix}", {})
+    employment_letter = indexed.get(f"DOC-EMP-{suffix}", {})
 
     def value(document: dict, field_name: str):
         record = document.get(field_name)
@@ -251,7 +292,24 @@ def _comparison(case_id: str) -> dict[str, Any]:
         else "MATCH"
     )
 
+    required_document_types = {"Pay stub", "Employment letter"}
+    supplied_document_types = {
+        doc.get("document_type") for doc in app.get("documents", [])
+    }
+    missing_documents = sorted(required_document_types - supplied_document_types)
+
     checks = [
+        {
+            "field": "required_supporting_documents",
+            "application_value": sorted(required_document_types),
+            "document_values": sorted(supplied_document_types),
+            "internal_api_value": None,
+            "status": "MISSING_REQUIRED_DOCUMENT" if missing_documents else "MATCH",
+            "evidence": (
+                "Missing required document(s): " + ", ".join(missing_documents)
+                if missing_documents else "All required supporting document types are listed."
+            ),
+        },
         {
             "field": "annual_income_cad",
             "application_value": declared_income,
@@ -614,7 +672,7 @@ def _system_prompt(state: AssistantState) -> str:
         "get_mortgage_application, extract_document_fields, get_internal_customer_data, search_mortgage_evidence, compare_mortgage_data, "
         "generate_credit_memo, save_credit_memo, get_mock_filenet_record. Do not claim tools ran unless results "
         "confirm it. Deterministic comparison results are authoritative; do not alter them. Explain discrepancies "
-        "and evidence. Always say human adjudication is required. Never approve or decline a mortgage. Default case "
+        "and evidence. Always say human adjudication is required. Never approve or decline a mortgage. Available synthetic test cases are MORT-1001 through MORT-1005. Default case "
         "is MORT-1001. When asked to generate a memo, generate and simulate saving it unless asked not to."
     )
 
