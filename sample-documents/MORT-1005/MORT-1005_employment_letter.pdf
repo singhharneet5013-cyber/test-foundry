@@ -1,5 +1,5 @@
 %PDF-1.4
-% ReportLab-style synthetic sample
+%ASCII ReportLab-style synthetic document
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -10,28 +10,46 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
 endobj
 4 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 5 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 298 >>
+<< /Length 1189 >>
 stream
-BT /F2 16 Tf 48 748 Td (EMPLOYMENT LETTER) Tj /F1 10 Tf 0 -25 Td (Synthetic Test Case MORT-1005) Tj 0 -35 Td (Employer: Synthetic Employer 1005) Tj 0 -22 Td (Employment status: Contract) Tj 0 -22 Td (Annual salary: CAD 105,000) Tj 0 -35 Td (Status differs from the application and pay stub.) Tj ET
+BT /F2 15 Tf 186 750 Td (Employment Verification Letter) Tj ET
+BT /F1 9 Tf 72 724 Td (Synthetic document - Case ID: MORT-1005 - Document ID: DOC-EMP-1005) Tj ET
+BT /F2 11 Tf 72 672 Td (Employment verification) Tj ET
+BT /F1 10 Tf 85 646 Td (Employee) Tj ET
+BT /F1 10 Tf 226 646 Td (Jordan Example 1005 \(fictional\)) Tj ET
+BT /F1 10 Tf 85 622 Td (Employer) Tj ET
+BT /F1 10 Tf 226 622 Td (Example Manufacturing 1005 Ltd. \(fictional\)) Tj ET
+BT /F1 10 Tf 85 598 Td (Employment status) Tj ET
+BT /F1 10 Tf 226 598 Td (Contract) Tj ET
+BT /F1 10 Tf 85 574 Td (Annual salary) Tj ET
+BT /F1 10 Tf 226 574 Td (CAD 105,000) Tj ET
+BT /F1 10 Tf 85 550 Td (Effective date) Tj ET
+BT /F1 10 Tf 226 550 Td (2026-01-15) Tj ET
+BT /F2 10 Tf 72 506 Td (Verification statement) Tj ET
+BT /F1 9 Tf 72 486 Td (This letter confirms that Jordan Example 1005 is engaged on a contract basis with Example Manufacturing) Tj ET
+BT /F1 9 Tf 72 473 Td (1005 Ltd. at an annualized salary of CAD 105,000.) Tj ET
+BT /F2 10 Tf 72 440 Td (Source statement) Tj ET
+BT /F1 9 Tf 72 420 Td (Synthetic employment letter: status is contract.) Tj ET
+BT /F2 8 Tf 72 72 Td (SYNTHETIC TEST DATA ONLY - NOT A REAL EMPLOYMENT LETTER.) Tj ET
 endstream
 endobj
 xref
 0 7
 0000000000 65535 f 
-0000000044 00000 n 
-0000000093 00000 n 
-0000000150 00000 n 
-0000000286 00000 n 
-0000000356 00000 n 
-0000000431 00000 n 
+0000000051 00000 n 
+0000000100 00000 n 
+0000000157 00000 n 
+0000000293 00000 n 
+0000000390 00000 n 
+0000000492 00000 n 
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-779
+1732
 %%EOF
