@@ -701,6 +701,87 @@ def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 t
 
 
 @tool
+def get_credit_memo_download_link(
+    case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]
+) -> str:
+    """Create a five-minute, read-only download link for an already-uploaded credit memo.
+
+    Call this tool only when the user explicitly requests a download link or direct link.
+    It does not generate or upload a memo. Download links can be disabled by configuration.
+    """
+    if os.environ.get("ENABLE_CREDIT_MEMO_DOWNLOAD_LINK", "false").strip().lower() not in {"1", "true", "yes"}:
+        return _json({
+            "case_id": case_id.strip().upper(),
+            "status": "DOWNLOAD_LINKS_DISABLED",
+            "message": "Direct download links are disabled for this environment.",
+        })
+
+    case_id = case_id.strip().upper()
+    if case_id not in APPLICATIONS:
+        return _json({"error": "Synthetic application not found.", "case_id": case_id})
+
+    from datetime import timedelta
+    from urllib.parse import quote
+    from azure.storage.blob import (
+        BlobServiceClient,
+        BlobSasPermissions,
+        ContentDisposition,
+        generate_blob_sas,
+    )
+
+    credential = DefaultAzureCredential()
+    service = BlobServiceClient(account_url=_STORAGE_ACCOUNT_URL, credential=credential)
+    try:
+        source_name = f"{case_id.lower()}-credit-memo.pdf"
+        blob_name = f"{case_id}/{source_name}"
+        blob = service.get_blob_client(container=_CREDIT_MEMO_CONTAINER, blob=blob_name)
+
+        try:
+            blob.get_blob_properties()
+        except Exception:
+            logger.exception("Credit memo blob not found or not accessible for case %s", case_id)
+            return _json({
+                "error": "No uploaded credit memo was found for this case.",
+                "case_id": case_id,
+            })
+
+        now = datetime.now(timezone.utc)
+        expiry = now + timedelta(minutes=5)
+        delegation_key = service.get_user_delegation_key(
+            key_start_time=now - timedelta(minutes=5),
+            key_expiry_time=expiry,
+        )
+        sas_token = generate_blob_sas(
+            account_name=service.account_name,
+            container_name=_CREDIT_MEMO_CONTAINER,
+            blob_name=blob_name,
+            user_delegation_key=delegation_key,
+            permission=BlobSasPermissions(read=True),
+            start=now - timedelta(minutes=5),
+            expiry=expiry,
+            protocol="https",
+            content_disposition=f'attachment; filename="{source_name}"',
+        )
+        return _json({
+            "case_id": case_id,
+            "status": "DOWNLOAD_LINK_CREATED",
+            "download_url": f"{blob.url}?{sas_token}",
+            "expires_at_utc": expiry.isoformat(),
+            "expires_in_minutes": 5,
+            "permissions": "read-only",
+        })
+    except Exception:
+        logger.exception("Credit memo download link creation failed for case %s", case_id)
+        return _json({
+            "error": "Could not create a download link for this credit memo.",
+            "case_id": case_id,
+        })
+    finally:
+        service.close()
+        credential.close()
+
+
+@tool
 def get_mock_filenet_record(
     case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]
 ) -> str:
@@ -764,7 +845,7 @@ def _system_prompt(state: AssistantState) -> str:
         f"You are a mortgage document validation POC assistant. Locale: {state.get('locale', 'en-CA')}. "
         "All records and integrations are synthetic/mocked. For a validation request, use tools as applicable: "
         "get_mortgage_application, extract_document_fields, get_internal_customer_data, search_mortgage_evidence, compare_mortgage_data, "
-        "generate_credit_memo, save_credit_memo, get_mock_filenet_record. Do not claim tools ran unless results "
+        "generate_credit_memo, save_credit_memo, get_mock_filenet_record, get_credit_memo_download_link. Do not claim tools ran unless results "
         "confirm it. Deterministic comparison results are authoritative; do not alter them. Explain discrepancies "
         "and evidence. State adjudication requirements from deterministic results. For MORT-1006, if every check matches, "
         "explain that human adjudication is not required for document validation only. Any flagged check requires human "
@@ -775,7 +856,8 @@ def _system_prompt(state: AssistantState) -> str:
 
 def _build_graph(model: ChatOpenAI):
     tools = [get_mortgage_application, extract_document_fields, get_internal_customer_data, search_mortgage_evidence,
-             compare_mortgage_data, generate_credit_memo, save_credit_memo, get_mock_filenet_record]
+             compare_mortgage_data, generate_credit_memo, save_credit_memo, get_mock_filenet_record,
+             get_credit_memo_download_link]
     tool_model = model.bind_tools(tools)
 
     async def assistant(state: AssistantState) -> dict[str, list[BaseMessage]]:
