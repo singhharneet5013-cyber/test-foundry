@@ -721,11 +721,9 @@ def get_credit_memo_download_link(
         return _json({"error": "Synthetic application not found.", "case_id": case_id})
 
     from datetime import timedelta
-    from urllib.parse import quote
     from azure.storage.blob import (
         BlobServiceClient,
         BlobSasPermissions,
-        ContentDisposition,
         generate_blob_sas,
     )
 
@@ -850,7 +848,11 @@ def _system_prompt(state: AssistantState) -> str:
         "and evidence. State adjudication requirements from deterministic results. For MORT-1006, if every check matches, "
         "explain that human adjudication is not required for document validation only. Any flagged check requires human "
         "review. Never approve or decline a mortgage. Available synthetic test cases are MORT-1001 through MORT-1006. Default case "
-        "is MORT-1001. When asked to generate a memo, generate and simulate saving it unless asked not to."
+        "is MORT-1001. When asked to generate a memo, generate and save it unless asked not to. "
+        "Never create, request, or include a download URL or SAS token during ordinary memo generation. "
+        "Call get_credit_memo_download_link only if the user explicitly asks for a downloadable link, "
+        "direct link, or download URL for an already-uploaded credit memo. If link generation is disabled "
+        "or fails, explain that clearly and do not invent a URL. SAS links expire after five minutes."
     )
 
 
