@@ -56,6 +56,10 @@ def extract_document(pdf_path: str | Path) -> dict[str, Any]:
 
     if re.search(r"Permanent full-time", text, re.IGNORECASE):
         fields["employment_status"] = "permanent full-time"
+    elif re.search(r"Employment status\s*:?\s*Contract|contract basis", text, re.IGNORECASE):
+        fields["employment_status"] = "contract"
+    elif re.search(r"Employment status\s*:?\s*Terminated", text, re.IGNORECASE):
+        fields["employment_status"] = "terminated"
     elif re.search(r"Employed", text, re.IGNORECASE):
         fields["employment_status"] = "employed"
 
@@ -110,7 +114,7 @@ def _evidence_for_field(text: str, field: str) -> str | None:
             rf"(?:CAD\s*)?[\d,]+"
         ) if field != "employment_status" else (
             rf"{re.escape(label)}\s*:?\s*"
-            rf"(?:Permanent full-time|Employed)"
+            rf"(?:Permanent full-time|Employed|Contract|Terminated)"
         )
 
         match = re.search(pattern, text, re.IGNORECASE)
@@ -122,7 +126,7 @@ def _evidence_for_field(text: str, field: str) -> str | None:
             rf"{re.escape(label)}\s*\n\s*(?:CAD\s*)?[\d,]+"
         ) if field != "employment_status" else (
             rf"{re.escape(label)}\s*\n\s*"
-            rf"(?:Permanent full-time|Employed)"
+            rf"(?:Permanent full-time|Employed|Contract|Terminated)"
         )
 
         match = re.search(pattern, text, re.IGNORECASE)

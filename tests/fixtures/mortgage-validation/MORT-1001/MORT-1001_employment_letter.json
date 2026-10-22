@@ -1,0 +1,8 @@
+{
+  "case_id": "MORT-1001",
+  "document_id": "DOC-EMP-1001",
+  "synthetic_only": true,
+  "document_type": "employment_letter",
+  "annual_income_cad": 108000,
+  "employment_status": "permanent full-time"
+}

@@ -1,0 +1,9 @@
+{
+  "case_id": "MORT-1006",
+  "document_id": "DOC-EMP-1006",
+  "synthetic_only": true,
+  "document_type": "employment_letter",
+  "employer": "Synthetic Employer 1006",
+  "annual_income_cad": 105000,
+  "employment_status": "employed"
+}

@@ -39,8 +39,8 @@ _CASE = "MORT-1001"
 _OUT = Path(os.environ.get("CREDIT_MEMO_OUTPUT_DIR", "./artifacts")).resolve()
 _MOCK_FILENET = _OUT / "mock-filenet"
 
-_STORAGE_ACCOUNT_URL = "https://stdemo131233b.blob.core.windows.net"
-_CREDIT_MEMO_CONTAINER = "mortgage-credit-memos"
+AZURE_STORAGE_ACCOUNT_URL = os.environ["AZURE_STORAGE_ACCOUNT_URL"].rstrip("/")
+CREDIT_MEMO_CONTAINER = os.environ["CREDIT_MEMO_CONTAINER"].strip()
 
 
 
@@ -49,7 +49,7 @@ class AssistantState(TypedDict, total=False):
     locale: str
 
 
-# Synthetic-only sample data. Replace only with approved test data in later phases.
+# Synthetic-only sample data. MORT-1001 is intentionally unchanged.
 APPLICATIONS: dict[str, dict[str, Any]] = {
     _CASE: {
         "case_id": _CASE, "applicant_name": "SYNTHETIC APPLICANT",
@@ -62,7 +62,56 @@ APPLICATIONS: dict[str, dict[str, Any]] = {
             {"document_id": "DOC-EMP-1001", "document_type": "Employment letter",
              "file_name": "synthetic_employment_letter.txt", "source": "Mock FileNet"},
         ],
-    }
+    },
+    "MORT-1002": {
+        "case_id": "MORT-1002", "applicant_name": "SYNTHETIC APPLICANT 1002",
+        "application_type": "Residential mortgage", "requested_mortgage_cad": 400000,
+        "property_value_cad": 550000, "declared_annual_income_cad": 120000,
+        "declared_monthly_liabilities_cad": 850, "declared_employment_status": "employed",
+        "documents": [
+            {"document_id": "DOC-PAY-1002", "document_type": "Pay stub", "file_name": "MORT-1002_pay_stub.pdf", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1002", "document_type": "Employment letter", "file_name": "MORT-1002_employment_letter.pdf", "source": "Mock FileNet"},
+        ],
+    },
+    "MORT-1003": {
+        "case_id": "MORT-1003", "applicant_name": "SYNTHETIC APPLICANT 1003",
+        "application_type": "Residential mortgage", "requested_mortgage_cad": 350000,
+        "property_value_cad": 480000, "declared_annual_income_cad": 100000,
+        "declared_monthly_liabilities_cad": 500, "declared_employment_status": "employed",
+        "documents": [
+            {"document_id": "DOC-PAY-1003", "document_type": "Pay stub", "file_name": "MORT-1003_pay_stub.pdf", "source": "Mock FileNet"},
+        ],
+    },
+    "MORT-1004": {
+        "case_id": "MORT-1004", "applicant_name": "SYNTHETIC APPLICANT 1004",
+        "application_type": "Residential mortgage", "requested_mortgage_cad": 450000,
+        "property_value_cad": 620000, "declared_annual_income_cad": 110000,
+        "declared_monthly_liabilities_cad": 700, "declared_employment_status": "employed",
+        "documents": [
+            {"document_id": "DOC-PAY-1004", "document_type": "Pay stub", "file_name": "MORT-1004_pay_stub.pdf", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1004", "document_type": "Employment letter", "file_name": "MORT-1004_employment_letter.pdf", "source": "Mock FileNet"},
+        ],
+    },
+    "MORT-1005": {
+        "case_id": "MORT-1005", "applicant_name": "SYNTHETIC APPLICANT 1005",
+        "application_type": "Residential mortgage", "requested_mortgage_cad": 375000,
+        "property_value_cad": 510000, "declared_annual_income_cad": 105000,
+        "declared_monthly_liabilities_cad": 600, "declared_employment_status": "employed",
+        "documents": [
+            {"document_id": "DOC-PAY-1005", "document_type": "Pay stub", "file_name": "MORT-1005_pay_stub.pdf", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1005", "document_type": "Employment letter", "file_name": "MORT-1005_employment_letter.pdf", "source": "Mock FileNet"},
+        ],
+    },
+    "MORT-1006": {
+        "case_id": "MORT-1006", "applicant_name": "SYNTHETIC APPLICANT 1006",
+        "application_type": "Residential mortgage", "requested_mortgage_cad": 375000,
+        "property_value_cad": 510000, "declared_annual_income_cad": 105000,
+        "declared_monthly_liabilities_cad": 600, "declared_employment_status": "employed",
+        "documents": [
+            {"document_id": "DOC-PAY-1006", "document_type": "Pay stub", "file_name": "MORT-1006_pay_stub.pdf", "source": "Mock FileNet"},
+            {"document_id": "DOC-EMP-1006", "document_type": "Employment letter", "file_name": "MORT-1006_employment_letter.pdf", "source": "Mock FileNet"},
+        ],
+    },
 }
 DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
     "DOC-PAY-1001": {"document_type": "Pay stub", "employer": "Example North Ltd. (synthetic)",
@@ -72,11 +121,48 @@ DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
     "DOC-EMP-1001": {"document_type": "Employment letter", "employer": "Example North Ltd. (synthetic)",
                      "annual_income_cad": 108000, "employment_status": "permanent full-time",
                      "evidence": "Synthetic employment letter: annual salary is CAD 108,000."},
+    "DOC-PAY-1002": {"document_type": "Pay stub", "employer": "Synthetic Employer 1002",
+                     "annual_income_cad": 120000, "employment_status": "employed",
+                     "evidence": "Synthetic pay stub: annualized income is CAD 120,000."},
+    "DOC-EMP-1002": {"document_type": "Employment letter", "employer": "Synthetic Employer 1002",
+                     "annual_income_cad": 95000, "employment_status": "employed",
+                     "evidence": "Synthetic employment letter: annual salary is CAD 95,000."},
+    "DOC-PAY-1003": {"document_type": "Pay stub", "employer": "Synthetic Employer 1003",
+                     "annual_income_cad": 100000, "employment_status": "employed",
+                     "evidence": "Synthetic pay stub: annualized income is CAD 100,000."},
+    "DOC-PAY-1004": {"document_type": "Pay stub", "employer": "Synthetic Employer 1004",
+                     "annual_income_cad": 110000, "employment_status": "employed",
+                     "evidence": "Synthetic pay stub: annualized income is CAD 110,000."},
+    "DOC-EMP-1004": {"document_type": "Employment letter", "employer": "Synthetic Employer 1004",
+                     "annual_income_cad": 110000, "employment_status": "employed",
+                     "evidence": "Synthetic employment letter: annual salary is CAD 110,000."},
+    "DOC-PAY-1005": {"document_type": "Pay stub", "employer": "Synthetic Employer 1005",
+                     "annual_income_cad": 105000, "employment_status": "employed",
+                     "evidence": "Synthetic pay stub: annualized income is CAD 105,000."},
+    "DOC-EMP-1005": {"document_type": "Employment letter", "employer": "Synthetic Employer 1005",
+                     "annual_income_cad": 105000, "employment_status": "contract",
+                     "evidence": "Synthetic employment letter: status is contract."},
+    "DOC-PAY-1006": {"document_type": "Pay stub", "employer": "Synthetic Employer 1006",
+                     "annual_income_cad": 105000, "employment_status": "employed",
+                     "evidence": "Synthetic pay stub: annualized income is CAD 105,000."},
+    "DOC-EMP-1006": {"document_type": "Employment letter", "employer": "Synthetic Employer 1006",
+                     "annual_income_cad": 105000, "employment_status": "employed",
+                     "evidence": "Synthetic employment letter: annual salary is CAD 105,000."},
 }
 INTERNAL_DATA: dict[str, dict[str, Any]] = {
     _CASE: {"customer_reference": "SYN-CUST-1001", "annual_income_cad": 120000,
             "monthly_liabilities_cad": 1450, "employment_status": "employed",
-            "source_system": "Mock Internal Customer API"}
+            "source_system": "Mock Internal Customer API"},
+    "MORT-1002": {"customer_reference": "SYN-CUST-1002", "annual_income_cad": 120000,
+                  "monthly_liabilities_cad": 850, "employment_status": "employed", "source_system": "Mock Internal Customer API"},
+    "MORT-1003": {"customer_reference": "SYN-CUST-1003", "annual_income_cad": 100000,
+                  "monthly_liabilities_cad": 500, "employment_status": "employed", "source_system": "Mock Internal Customer API"},
+    "MORT-1004": {"customer_reference": "SYN-CUST-1004", "annual_income_cad": 110000,
+                  "monthly_liabilities_cad": 1300, "employment_status": "employed", "source_system": "Mock Internal Customer API"},
+    "MORT-1005": {"customer_reference": "SYN-CUST-1005", "annual_income_cad": 105000,
+                  "monthly_liabilities_cad": 600, "employment_status": "terminated", "source_system": "Mock Internal Customer API"},
+    "MORT-1006": {"customer_reference": "SYN-CUST-1006", "annual_income_cad": 105000,
+                  "monthly_liabilities_cad": 600, "employment_status": "employed", "source_system": "Mock Internal Customer API"},
 }
 MOCK_FILENET_RECORDS: dict[str, dict[str, Any]] = {}
 
@@ -101,7 +187,7 @@ def _build_search_client() -> SearchClient:
 
 @tool
 def search_mortgage_evidence(
-    case_id: Annotated[str, "Synthetic mortgage case ID; use MORT-1001."]
+    case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]
 ) -> str:
     """Retrieve extracted mortgage document fields and evidence from Azure AI Search."""
     case_id = case_id.strip().upper()
@@ -127,6 +213,18 @@ def search_mortgage_evidence(
         )
 
         records = [dict(record) for record in results]
+        if not records:
+            return _json({
+                "case_id": case_id,
+                "source": "Azure AI Search",
+                "index_name": os.environ.get(
+                    "AZURE_SEARCH_INDEX_NAME",
+                    "mortgage-document-evidence",
+                ),
+                "record_count": 0,
+                "records": [],
+                "warning": "No indexed PDF evidence found. Run setup_search.py; fixture data is not used as evidence.",
+            })
 
         return _json({
             "case_id": case_id,
@@ -168,12 +266,12 @@ def _comparison(case_id: str) -> dict[str, Any]:
         top=100,
     ))
 
-    if not results:
-        raise ValueError(
-            f"No indexed evidence found for {case_id}; comparison cannot proceed."
-        )
-
     records = [dict(item) for item in results]
+    if not records:
+        raise ValueError(
+            f"No indexed PDF evidence found for {case_id}; comparison cannot proceed. "
+            "Run setup_search.py. Synthetic fixtures are not used as evidence."
+        )
 
     if any(
         record.get("synthetic_only") is not True
@@ -188,9 +286,10 @@ def _comparison(case_id: str) -> dict[str, Any]:
         field_name = record["field_name"]
         indexed.setdefault(document_id, {})[field_name] = record
 
-    application = indexed.get("DOC-APP-1001", {})
-    pay_stub = indexed.get("DOC-PAY-1001", {})
-    employment_letter = indexed.get("DOC-EMP-1001", {})
+    suffix = case_id[-4:]
+    application = indexed.get(f"DOC-APP-{suffix}", {})
+    pay_stub = indexed.get(f"DOC-PAY-{suffix}", {})
+    employment_letter = indexed.get(f"DOC-EMP-{suffix}", {})
 
     def value(document: dict, field_name: str):
         record = document.get(field_name)
@@ -251,7 +350,24 @@ def _comparison(case_id: str) -> dict[str, Any]:
         else "MATCH"
     )
 
+    required_document_types = {"Pay stub", "Employment letter"}
+    supplied_document_types = {
+        doc.get("document_type") for doc in app.get("documents", [])
+    }
+    missing_documents = sorted(required_document_types - supplied_document_types)
+
     checks = [
+        {
+            "field": "required_supporting_documents",
+            "application_value": sorted(required_document_types),
+            "document_values": sorted(supplied_document_types),
+            "internal_api_value": None,
+            "status": "MISSING_REQUIRED_DOCUMENT" if missing_documents else "MATCH",
+            "evidence": (
+                "Missing required document(s): " + ", ".join(missing_documents)
+                if missing_documents else "All required supporting document types are listed."
+            ),
+        },
         {
             "field": "annual_income_cad",
             "application_value": declared_income,
@@ -293,6 +409,9 @@ def _comparison(case_id: str) -> dict[str, Any]:
     ]
 
     issues = [row for row in checks if row["status"] != "MATCH"]
+    # MORT-1006 is a straight-through document-validation scenario only when all checks match.
+    # Any flagged check, including one on MORT-1006, requires human adjudication.
+    human_review_required = bool(issues) or case_id != "MORT-1006"
 
     return {
         "case_id": case_id,
@@ -303,9 +422,14 @@ def _comparison(case_id: str) -> dict[str, Any]:
         "discrepancy_count": len(issues),
         "discrepancies": issues,
         "overall_status": (
-            "REVIEW_REQUIRED" if issues else "NO_DISCREPANCY_DETECTED"
+            "REVIEW_REQUIRED" if human_review_required
+            else "VALIDATED_NO_ADJUDICATION_REQUIRED"
         ),
-        "human_review_required": True,
+        "human_review_required": human_review_required,
+        "adjudication_status": "REQUIRED" if human_review_required else "NOT_REQUIRED",
+        "human_review_scope": (
+            "Flagged document-validation differences only; this is not a mortgage credit decision."
+        ),
         "decision_boundary": (
             "This comparison does not approve or decline a mortgage."
         ),
@@ -313,7 +437,7 @@ def _comparison(case_id: str) -> dict[str, Any]:
 
 
 @tool
-def get_mortgage_application(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def get_mortgage_application(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Get the synthetic mortgage application and document inventory."""
     record = APPLICATIONS.get(case_id.strip().upper())
     return _json(record if record else {"error": "Synthetic application not found.",
@@ -321,7 +445,7 @@ def get_mortgage_application(case_id: Annotated[str, "Synthetic case ID; use MOR
 
 
 @tool
-def extract_document_fields(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def extract_document_fields(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Return pre-seeded synthetic OCR/extraction results; no real OCR service is called."""
     case_id = case_id.strip().upper()
     app = APPLICATIONS.get(case_id)
@@ -336,7 +460,7 @@ def extract_document_fields(case_id: Annotated[str, "Synthetic case ID; use MORT
 
 
 @tool
-def get_internal_customer_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def get_internal_customer_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Get synthetic customer values from a mock internal operational API."""
     record = INTERNAL_DATA.get(case_id.strip().upper())
     return _json({"case_id": case_id.strip().upper(), **record, "mode": "MOCK_API"}
@@ -344,7 +468,7 @@ def get_internal_customer_data(case_id: Annotated[str, "Synthetic case ID; use M
 
 
 @tool
-def compare_mortgage_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def compare_mortgage_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Compare application, extracted document, and internal API values deterministically."""
     try:
         return _json(_comparison(case_id))
@@ -352,10 +476,54 @@ def compare_mortgage_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1
         return _json({"error": str(exc), "case_id": case_id})
 
 
+def _draw_td_pdf_brand(canvas, doc) -> None:
+    """Draw a restrained TD-inspired mark and consistent footer on every PDF page.
+
+    The mark is a simple text/vector treatment for this synthetic POC, not an
+    official supplied brand asset. Replace with approved TD artwork before any
+    external or production use.
+    """
+    canvas.saveState()
+    page_width, page_height = letter
+    green = colors.HexColor("#008A52")
+    dark_green = colors.HexColor("#006B45")
+    margin = 0.55 * inch
+
+    # Header brand mark: green square with white TD lettering.
+    logo_size = 0.48 * inch
+    logo_x = page_width - margin - logo_size
+    logo_y = page_height - 0.52 * inch
+    canvas.setFillColor(green)
+    canvas.roundRect(logo_x, logo_y, logo_size, logo_size, 0.06 * inch, fill=1, stroke=0)
+    canvas.setFillColor(colors.white)
+    canvas.setFont("Helvetica-Bold", 15)
+    canvas.drawCentredString(logo_x + logo_size / 2, logo_y + 0.155 * inch, "TD")
+
+    # Green rule under the header; repeated on every page.
+    canvas.setStrokeColor(dark_green)
+    canvas.setLineWidth(1.4)
+    canvas.line(margin, page_height - 0.68 * inch, page_width - margin, page_height - 0.68 * inch)
+
+    # Restrained footer on every page.
+    canvas.setStrokeColor(colors.HexColor("#D7E5DD"))
+    canvas.setLineWidth(0.6)
+    canvas.line(margin, 0.42 * inch, page_width - margin, 0.42 * inch)
+    canvas.setFillColor(colors.HexColor("#53665D"))
+    canvas.setFont("Helvetica", 7.5)
+    canvas.drawString(margin, 0.25 * inch, "SYNTHETIC POC • NOT A CREDIT DECISION")
+    canvas.drawRightString(page_width - margin, 0.25 * inch, f"Page {doc.page}")
+    canvas.restoreState()
+
+
 def _create_pdf(case_id: str, app: dict[str, Any], comparison: dict[str, Any]) -> Path:
     _OUT.mkdir(parents=True, exist_ok=True)
     path = _OUT / f"{case_id.lower()}-credit-memo.pdf"
     styles = getSampleStyleSheet()
+    # Reserve a clear header area so the brand mark never overlaps the memo title.
+    styles["Title"].fontName = "Helvetica-Bold"
+    styles["Title"].fontSize = 17
+    styles["Title"].leading = 21
+    styles["Title"].textColor = colors.HexColor("#006B45")
     story = [
         Paragraph("Mortgage Document Validation — Credit Memo", styles["Title"]),
         Spacer(1, 0.12 * inch),
@@ -436,26 +604,47 @@ def _create_pdf(case_id: str, app: dict[str, Any], comparison: dict[str, Any]) -
     ]))
 
     story.extend([table, Spacer(1, 0.12*inch), Paragraph("Discrepancies and evidence", styles["Heading2"])])
-    for item in comparison["discrepancies"]:
-        text = (f"<b>{item['field']} — {item['status']}</b><br/>"
-                f"Application: {item['application_value']}<br/>"
-                f"Document value(s): {', '.join(map(str, item['document_values'])) or 'Not supplied'}<br/>"
-                f"Internal API: {item['internal_api_value']}<br/>Evidence: {item['evidence']}")
-        story.extend([Paragraph(text, styles["BodyText"]), Spacer(1, 0.08*inch)])
+    if comparison["discrepancies"]:
+        for item in comparison["discrepancies"]:
+            text = (f"<b>{item['field']} — {item['status']}</b><br/>"
+                    f"Application: {item['application_value']}<br/>"
+                    f"Document value(s): {', '.join(map(str, item['document_values'])) or 'Not supplied'}<br/>"
+                    f"Internal API: {item['internal_api_value']}<br/>Evidence: {item['evidence']}")
+            story.extend([Paragraph(text, styles["BodyText"]), Spacer(1, 0.08*inch)])
+    else:
+        story.append(Paragraph(
+            "No discrepancies detected across the required synthetic validation checks.",
+            styles["BodyText"],
+        ))
+    if comparison["human_review_required"]:
+        adjudication_heading = "Human adjudication required"
+        adjudication_body = (
+            "A human reviewer must assess the flagged document-validation differences. "
+            "This memo is an evidence summary only and does not make a final mortgage decision."
+        )
+    else:
+        adjudication_heading = "Human adjudication: not required for document validation"
+        adjudication_body = (
+            "All required checks matched, so this document-validation run does not require human adjudication. "
+            "This is not a mortgage approval or decline; the POC does not make credit decisions."
+        )
     story.extend([
-        Paragraph("Human adjudication required", styles["Heading2"]),
-        Paragraph("Mortgage adjudication staff must review the source documents, internal data, and flagged differences. "
-                  "This memo is an evidence summary only and does not make a final mortgage decision.", styles["BodyText"]),
+        Paragraph(adjudication_heading, styles["Heading2"]),
+        Paragraph(adjudication_body, styles["BodyText"]),
         Spacer(1, 0.1*inch),
         Paragraph("POC limitation: OCR, operational data, and FileNet storage are simulated.", styles["Italic"]),
     ])
     SimpleDocTemplate(str(path), pagesize=letter, rightMargin=.55*inch, leftMargin=.55*inch,
-                      topMargin=.55*inch, bottomMargin=.55*inch).build(story)
+                      topMargin=.92*inch, bottomMargin=.62*inch).build(
+                          story,
+                          onFirstPage=_draw_td_pdf_brand,
+                          onLaterPages=_draw_td_pdf_brand,
+                      )
     return path
 
 
 @tool
-def generate_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def generate_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Generate a PDF credit memo from deterministic synthetic validation results."""
     case_id = case_id.strip().upper()
     app = APPLICATIONS.get(case_id)
@@ -467,12 +656,14 @@ def generate_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-10
         return _json({"error": str(exc), "case_id": case_id})
     path = _create_pdf(case_id, app, comparison)
     return _json({"case_id": case_id, "status": "PDF_GENERATED", "file_path": str(path),
-                  "file_name": path.name, "synthetic_data_only": True, "human_adjudication_required": True})
+                  "file_name": path.name, "synthetic_data_only": True,
+                  "human_adjudication_required": comparison["human_review_required"],
+                  "adjudication_status": comparison["adjudication_status"]})
 
 
 
 @tool
-def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]) -> str:
+def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]) -> str:
     """Upload the generated PDF and metadata to Azure Blob Storage using managed identity."""
     from azure.storage.blob import BlobServiceClient, ContentSettings
 
@@ -485,12 +676,19 @@ def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."
             "case_id": case_id,
         })
 
+    try:
+        comparison = _comparison(case_id)
+    except Exception:
+        logger.exception("Could not determine adjudication status for case %s", case_id)
+        return _json({"error": "Validation status could not be determined; memo was not uploaded.",
+                      "case_id": case_id})
+
     credential = DefaultAzureCredential()
     service = BlobServiceClient(
-        account_url=_STORAGE_ACCOUNT_URL,
+        account_url=AZURE_STORAGE_ACCOUNT_URL,
         credential=credential,
     )
-    container = service.get_container_client(_CREDIT_MEMO_CONTAINER)
+    container = service.get_container_client(CREDIT_MEMO_CONTAINER)
 
     prefix = case_id
     pdf_blob_name = f"{prefix}/{source.name}"
@@ -511,10 +709,12 @@ def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."
             "document_id": f"CREDIT-MEMO-{case_id}",
             "pdf_blob": pdf_blob_name,
             "metadata_blob": metadata_blob_name,
-            "storage_account": "stdemo131233b",
-            "container": _CREDIT_MEMO_CONTAINER,
+            "storage_account_url": AZURE_STORAGE_ACCOUNT_URL,
+            "container": CREDIT_MEMO_CONTAINER,
             "synthetic_data_only": True,
-            "human_adjudication_required": True,
+            "human_adjudication_required": comparison["human_review_required"],
+            "adjudication_status": comparison["adjudication_status"],
+            "human_review_scope": comparison["human_review_scope"],
             "real_filenet_called": False,
             "created_at_utc": datetime.now(timezone.utc).isoformat(),
         }
@@ -549,8 +749,87 @@ def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001."
 
 
 @tool
+def get_credit_memo_download_link(
+    case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]
+) -> str:
+    """Create a five-minute, read-only download link for an already-uploaded credit memo.
+
+    Call this tool only when the user explicitly requests a download link or direct link.
+    It does not generate or upload a memo. Download links can be disabled by configuration.
+    """
+    if os.environ.get("ENABLE_CREDIT_MEMO_DOWNLOAD_LINK", "false").strip().lower() not in {"1", "true", "yes"}:
+        return _json({
+            "case_id": case_id.strip().upper(),
+            "status": "DOWNLOAD_LINKS_DISABLED",
+            "message": "Direct download links are disabled for this environment.",
+        })
+
+    case_id = case_id.strip().upper()
+    if case_id not in APPLICATIONS:
+        return _json({"error": "Synthetic application not found.", "case_id": case_id})
+
+    from datetime import timedelta
+    from azure.storage.blob import (
+        BlobServiceClient,
+        BlobSasPermissions,
+        generate_blob_sas,
+    )
+
+    credential = DefaultAzureCredential()
+    service = BlobServiceClient(account_url=AZURE_STORAGE_ACCOUNT_URL, credential=credential)
+    try:
+        source_name = f"{case_id.lower()}-credit-memo.pdf"
+        blob_name = f"{case_id}/{source_name}"
+        blob = service.get_blob_client(container=CREDIT_MEMO_CONTAINER, blob=blob_name)
+
+        try:
+            blob.get_blob_properties()
+        except Exception:
+            logger.exception("Credit memo blob not found or not accessible for case %s", case_id)
+            return _json({
+                "error": "No uploaded credit memo was found for this case.",
+                "case_id": case_id,
+            })
+
+        now = datetime.now(timezone.utc)
+        expiry = now + timedelta(minutes=5)
+        delegation_key = service.get_user_delegation_key(
+            key_start_time=now - timedelta(minutes=5),
+            key_expiry_time=expiry,
+        )
+        sas_token = generate_blob_sas(
+            account_name=service.account_name,
+            container_name=CREDIT_MEMO_CONTAINER,
+            blob_name=blob_name,
+            user_delegation_key=delegation_key,
+            permission=BlobSasPermissions(read=True),
+            start=now - timedelta(minutes=5),
+            expiry=expiry,
+            protocol="https",
+            content_disposition=f'attachment; filename="{source_name}"',
+        )
+        return _json({
+            "case_id": case_id,
+            "status": "DOWNLOAD_LINK_CREATED",
+            "download_url": f"{blob.url}?{sas_token}",
+            "expires_at_utc": expiry.isoformat(),
+            "expires_in_minutes": 5,
+            "permissions": "read-only",
+        })
+    except Exception:
+        logger.exception("Credit memo download link creation failed for case %s", case_id)
+        return _json({
+            "error": "Could not create a download link for this credit memo.",
+            "case_id": case_id,
+        })
+    finally:
+        service.close()
+        credential.close()
+
+
+@tool
 def get_mock_filenet_record(
-    case_id: Annotated[str, "Synthetic case ID; use MORT-1001."]
+    case_id: Annotated[str, "Synthetic case ID; use MORT-1001 through MORT-1006."]
 ) -> str:
     """Retrieve the persisted mock FileNet record from local JSON metadata."""
     case_id = case_id.strip().upper()
@@ -612,16 +891,27 @@ def _system_prompt(state: AssistantState) -> str:
         f"You are a mortgage document validation POC assistant. Locale: {state.get('locale', 'en-CA')}. "
         "All records and integrations are synthetic/mocked. For a validation request, use tools as applicable: "
         "get_mortgage_application, extract_document_fields, get_internal_customer_data, search_mortgage_evidence, compare_mortgage_data, "
-        "generate_credit_memo, save_credit_memo, get_mock_filenet_record. Do not claim tools ran unless results "
+        "generate_credit_memo, save_credit_memo, get_mock_filenet_record, get_credit_memo_download_link. Do not claim tools ran unless results "
         "confirm it. Deterministic comparison results are authoritative; do not alter them. Explain discrepancies "
-        "and evidence. Always say human adjudication is required. Never approve or decline a mortgage. Default case "
-        "is MORT-1001. When asked to generate a memo, generate and simulate saving it unless asked not to."
+        "and evidence. State adjudication requirements from deterministic results. For MORT-1006, if every check matches, "
+        "explain that human adjudication is not required for document validation only. Any flagged check requires human "
+        "review. Never approve or decline a mortgage. Available synthetic test cases are MORT-1001 through MORT-1006. Default case "
+        "is MORT-1001. When asked to generate a memo, generate and save it unless asked not to. "
+        "Never create, request, or include a download URL or SAS token during ordinary memo generation. "
+        "Call get_credit_memo_download_link only if the user explicitly asks for a downloadable link, "
+        "direct link, or download URL for an already-uploaded credit memo. If link generation is disabled "
+        "or fails, explain that clearly and do not invent a URL. SAS links expire after five minutes. "
+        "When the download-link tool succeeds, present the URL as a clickable Markdown hyperlink labelled "
+        "'[Download Credit Memo (PDF)](URL)' using the exact download_url returned by the tool; "
+        "replace URL with that value. Do not print the raw URL separately. Include the expires_at_utc value "
+        "from the tool response in the message."
     )
 
 
 def _build_graph(model: ChatOpenAI):
     tools = [get_mortgage_application, extract_document_fields, get_internal_customer_data, search_mortgage_evidence,
-             compare_mortgage_data, generate_credit_memo, save_credit_memo, get_mock_filenet_record]
+             compare_mortgage_data, generate_credit_memo, save_credit_memo, get_mock_filenet_record,
+             get_credit_memo_download_link]
     tool_model = model.bind_tools(tools)
 
     async def assistant(state: AssistantState) -> dict[str, list[BaseMessage]]:

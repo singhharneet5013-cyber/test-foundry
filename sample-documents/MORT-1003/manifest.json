@@ -1,0 +1,45 @@
+{
+  "case_id": "MORT-1003",
+  "synthetic_only": true,
+  "scenario": "missing_required_document",
+  "documents": [
+    {
+      "document_id": "DOC-APP-1003",
+      "file": "MORT-1003_application.pdf",
+      "type": "mortgage_application",
+      "fixture_file": "tests/fixtures/mortgage-validation/MORT-1003/MORT-1003_application.json"
+    },
+    {
+      "document_id": "DOC-PAY-1003",
+      "file": "MORT-1003_pay_stub.pdf",
+      "type": "pay_stub",
+      "fixture_file": "tests/fixtures/mortgage-validation/MORT-1003/MORT-1003_pay_stub.json"
+    }
+  ],
+  "ground_truth": {
+    "application": {
+      "annual_income_cad": 100000,
+      "monthly_liabilities_cad": 500,
+      "employment_status": "employed"
+    },
+    "pay_stub": {
+      "annual_income_cad": 100000,
+      "employment_status": "employed"
+    },
+    "employment_letter": {
+      "present": false
+    },
+    "internal_reference": {
+      "annual_income_cad": 100000,
+      "monthly_liabilities_cad": 500,
+      "employment_status": "employed"
+    }
+  },
+  "expected_deterministic_outcome": "REVIEW_REQUIRED",
+  "expected_flags": [
+    "required_supporting_documents",
+    "annual_income_cad",
+    "employment_status"
+  ],
+  "safety_note": "Synthetic test data only. Human adjudication is required; do not automatically approve or decline."
+}

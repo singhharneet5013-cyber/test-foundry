@@ -1,0 +1,62 @@
+%PDF-1.4
+%MORT-1001 aligned form template
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 1688 >>
+stream
+0 0 0 rg BT /F2 16 Tf 187.752 726.8 Td (Employment Verification Letter) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 700.8 Td (Synthetic document - Case ID: MORT-1006 - Document ID: DOC-EMP-1006) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 669.8 Td (Employment verification) Tj ET
+0.917647 0.941176 0.964706 rg 52.8 541.8 151.2 120 re f
+0.721569 0.760784 0.800000 RG 0.45 w 52.8 541.8 482.4 120 re S
+204 541.8 m 204 661.8 l S
+52.8 637.8 m 535.2 637.8 l S
+52.8 613.8 m 535.2 613.8 l S
+52.8 589.8 m 535.2 589.8 l S
+52.8 565.8 m 535.2 565.8 l S
+0 0 0 rg BT /F1 10 Tf 59.8 645.8 Td (Employee) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 645.8 Td (Jordan Example 1006 \(fictional\)) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 621.8 Td (Employer) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 621.8 Td (Example Manufacturing 1006 Ltd. \(fictional\)) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 597.8 Td (Employment status) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 597.8 Td (Employed) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 573.8 Td (Annual salary) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 573.8 Td (CAD 105,000) Tj ET
+0 0 0 rg BT /F1 10 Tf 59.8 549.8 Td (Effective date) Tj ET
+0 0 0 rg BT /F1 10 Tf 211 549.8 Td (2026-01-15) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 517.8 Td (Verification statement) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 498.8 Td (This letter confirms that Jordan Example 1006 is employed by Example Manufacturing 1006 Ltd.) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 486.8 Td (at an annual salary of CAD 105,000.) Tj ET
+0 0 0 rg BT /F2 11 Tf 52.8 460.8 Td (Source statement) Tj ET
+0 0 0 rg BT /F1 10 Tf 52.8 441.8 Td (Synthetic employment letter: annual salary is CAD 105,000.) Tj ET
+0.40 0.40 0.40 rg BT /F1 8 Tf 52.8 412.8 Td (SYNTHETIC TEST DATA ONLY - NOT A REAL EMPLOYMENT LETTER.) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000042 00000 n 
+0000000091 00000 n 
+0000000148 00000 n 
+0000000284 00000 n 
+0000000381 00000 n 
+0000000483 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2222
+%%EOF
