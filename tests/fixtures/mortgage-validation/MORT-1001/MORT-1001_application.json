@@ -1,0 +1,12 @@
+{
+  "case_id": "MORT-1001",
+  "document_id": "DOC-APP-1001",
+  "synthetic_only": true,
+  "document_type": "mortgage_application",
+  "requested_mortgage_cad": 525000,
+  "property_value_cad": 700000,
+  "annual_income_cad": 120000,
+  "monthly_liabilities_cad": 850,
+  "employment_status": "employed",
+  "expected_deterministic_outcome": "REVIEW_REQUIRED"
+}
