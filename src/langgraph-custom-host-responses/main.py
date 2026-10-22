@@ -476,10 +476,54 @@ def compare_mortgage_data(case_id: Annotated[str, "Synthetic case ID; use MORT-1
         return _json({"error": str(exc), "case_id": case_id})
 
 
+def _draw_td_pdf_brand(canvas, doc) -> None:
+    """Draw a restrained TD-inspired mark and consistent footer on every PDF page.
+
+    The mark is a simple text/vector treatment for this synthetic POC, not an
+    official supplied brand asset. Replace with approved TD artwork before any
+    external or production use.
+    """
+    canvas.saveState()
+    page_width, page_height = letter
+    green = colors.HexColor("#008A52")
+    dark_green = colors.HexColor("#006B45")
+    margin = 0.55 * inch
+
+    # Header brand mark: green square with white TD lettering.
+    logo_size = 0.48 * inch
+    logo_x = page_width - margin - logo_size
+    logo_y = page_height - 0.52 * inch
+    canvas.setFillColor(green)
+    canvas.roundRect(logo_x, logo_y, logo_size, logo_size, 0.06 * inch, fill=1, stroke=0)
+    canvas.setFillColor(colors.white)
+    canvas.setFont("Helvetica-Bold", 15)
+    canvas.drawCentredString(logo_x + logo_size / 2, logo_y + 0.155 * inch, "TD")
+
+    # Green rule under the header; repeated on every page.
+    canvas.setStrokeColor(dark_green)
+    canvas.setLineWidth(1.4)
+    canvas.line(margin, page_height - 0.68 * inch, page_width - margin, page_height - 0.68 * inch)
+
+    # Restrained footer on every page.
+    canvas.setStrokeColor(colors.HexColor("#D7E5DD"))
+    canvas.setLineWidth(0.6)
+    canvas.line(margin, 0.42 * inch, page_width - margin, 0.42 * inch)
+    canvas.setFillColor(colors.HexColor("#53665D"))
+    canvas.setFont("Helvetica", 7.5)
+    canvas.drawString(margin, 0.25 * inch, "SYNTHETIC POC • NOT A CREDIT DECISION")
+    canvas.drawRightString(page_width - margin, 0.25 * inch, f"Page {doc.page}")
+    canvas.restoreState()
+
+
 def _create_pdf(case_id: str, app: dict[str, Any], comparison: dict[str, Any]) -> Path:
     _OUT.mkdir(parents=True, exist_ok=True)
     path = _OUT / f"{case_id.lower()}-credit-memo.pdf"
     styles = getSampleStyleSheet()
+    # Reserve a clear header area so the brand mark never overlaps the memo title.
+    styles["Title"].fontName = "Helvetica-Bold"
+    styles["Title"].fontSize = 17
+    styles["Title"].leading = 21
+    styles["Title"].textColor = colors.HexColor("#006B45")
     story = [
         Paragraph("Mortgage Document Validation — Credit Memo", styles["Title"]),
         Spacer(1, 0.12 * inch),
@@ -591,7 +635,11 @@ def _create_pdf(case_id: str, app: dict[str, Any], comparison: dict[str, Any]) -
         Paragraph("POC limitation: OCR, operational data, and FileNet storage are simulated.", styles["Italic"]),
     ])
     SimpleDocTemplate(str(path), pagesize=letter, rightMargin=.55*inch, leftMargin=.55*inch,
-                      topMargin=.55*inch, bottomMargin=.55*inch).build(story)
+                      topMargin=.92*inch, bottomMargin=.62*inch).build(
+                          story,
+                          onFirstPage=_draw_td_pdf_brand,
+                          onLaterPages=_draw_td_pdf_brand,
+                      )
     return path
 
 
