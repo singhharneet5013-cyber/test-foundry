@@ -1,4 +1,24 @@
 .azure
 
+# Python virtual environments
+.venv/
+venv/
+myenv/
+
+# Python bytecode and test/tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environment configuration and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
 # Generated mortgage POC artifacts
 src/langgraph-custom-host-responses/artifacts/
