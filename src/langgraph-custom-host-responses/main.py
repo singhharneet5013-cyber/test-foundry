@@ -39,8 +39,8 @@ _CASE = "MORT-1001"
 _OUT = Path(os.environ.get("CREDIT_MEMO_OUTPUT_DIR", "./artifacts")).resolve()
 _MOCK_FILENET = _OUT / "mock-filenet"
 
-_STORAGE_ACCOUNT_URL = "https://stdemo131233b.blob.core.windows.net"
-_CREDIT_MEMO_CONTAINER = "mortgage-credit-memos"
+_STORAGE_ACCOUNT_URL = os.environ["AZURE_STORAGE_ACCOUNT_URL"].rstrip("/")
+_CREDIT_MEMO_CONTAINER = os.environ.get("CREDIT_MEMO_CONTAINER", "mortgage-credit-memos").strip()
 
 
 
