@@ -39,7 +39,7 @@ _CASE = "MORT-1001"
 _OUT = Path(os.environ.get("CREDIT_MEMO_OUTPUT_DIR", "./artifacts")).resolve()
 _MOCK_FILENET = _OUT / "mock-filenet"
 
-AZUREAZURE_STORAGE_ACCOUNT_URL = os.environ["AZUREAZURE_STORAGE_ACCOUNT_URL"].rstrip("/")
+AZURE_STORAGE_ACCOUNT_URL = os.environ["AZURE_STORAGE_ACCOUNT_URL"].rstrip("/")
 CREDIT_MEMO_CONTAINER = os.environ["CREDIT_MEMO_CONTAINER"].strip()
 
 
