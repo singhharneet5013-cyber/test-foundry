@@ -39,8 +39,8 @@ _CASE = "MORT-1001"
 _OUT = Path(os.environ.get("CREDIT_MEMO_OUTPUT_DIR", "./artifacts")).resolve()
 _MOCK_FILENET = _OUT / "mock-filenet"
 
-_STORAGE_ACCOUNT_URL = os.environ["AZURE_STORAGE_ACCOUNT_URL"].rstrip("/")
-_CREDIT_MEMO_CONTAINER = os.environ.get("CREDIT_MEMO_CONTAINER", "mortgage-credit-memos").strip()
+AZUREAZURE_STORAGE_ACCOUNT_URL = os.environ["AZUREAZURE_STORAGE_ACCOUNT_URL"].rstrip("/")
+CREDIT_MEMO_CONTAINER = os.environ["CREDIT_MEMO_CONTAINER"].strip()
 
 
 
@@ -637,10 +637,10 @@ def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 t
 
     credential = DefaultAzureCredential()
     service = BlobServiceClient(
-        account_url=_STORAGE_ACCOUNT_URL,
+        account_url=AZURE_STORAGE_ACCOUNT_URL,
         credential=credential,
     )
-    container = service.get_container_client(_CREDIT_MEMO_CONTAINER)
+    container = service.get_container_client(CREDIT_MEMO_CONTAINER)
 
     prefix = case_id
     pdf_blob_name = f"{prefix}/{source.name}"
@@ -661,8 +661,8 @@ def save_credit_memo(case_id: Annotated[str, "Synthetic case ID; use MORT-1001 t
             "document_id": f"CREDIT-MEMO-{case_id}",
             "pdf_blob": pdf_blob_name,
             "metadata_blob": metadata_blob_name,
-            "storage_account": "stdemo131233b",
-            "container": _CREDIT_MEMO_CONTAINER,
+            "storage_account_url": AZURE_STORAGE_ACCOUNT_URL,
+            "container": CREDIT_MEMO_CONTAINER,
             "synthetic_data_only": True,
             "human_adjudication_required": comparison["human_review_required"],
             "adjudication_status": comparison["adjudication_status"],
@@ -728,11 +728,11 @@ def get_credit_memo_download_link(
     )
 
     credential = DefaultAzureCredential()
-    service = BlobServiceClient(account_url=_STORAGE_ACCOUNT_URL, credential=credential)
+    service = BlobServiceClient(account_url=AZURE_STORAGE_ACCOUNT_URL, credential=credential)
     try:
         source_name = f"{case_id.lower()}-credit-memo.pdf"
         blob_name = f"{case_id}/{source_name}"
-        blob = service.get_blob_client(container=_CREDIT_MEMO_CONTAINER, blob=blob_name)
+        blob = service.get_blob_client(container=CREDIT_MEMO_CONTAINER, blob=blob_name)
 
         try:
             blob.get_blob_properties()
@@ -751,7 +751,7 @@ def get_credit_memo_download_link(
         )
         sas_token = generate_blob_sas(
             account_name=service.account_name,
-            container_name=_CREDIT_MEMO_CONTAINER,
+            container_name=CREDIT_MEMO_CONTAINER,
             blob_name=blob_name,
             user_delegation_key=delegation_key,
             permission=BlobSasPermissions(read=True),
