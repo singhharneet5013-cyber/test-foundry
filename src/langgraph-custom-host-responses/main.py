@@ -852,7 +852,11 @@ def _system_prompt(state: AssistantState) -> str:
         "Never create, request, or include a download URL or SAS token during ordinary memo generation. "
         "Call get_credit_memo_download_link only if the user explicitly asks for a downloadable link, "
         "direct link, or download URL for an already-uploaded credit memo. If link generation is disabled "
-        "or fails, explain that clearly and do not invent a URL. SAS links expire after five minutes."
+        "or fails, explain that clearly and do not invent a URL. SAS links expire after five minutes. "
+        "When the download-link tool succeeds, present the URL as a clickable Markdown hyperlink labelled "
+        "'[Download Credit Memo (PDF)](URL)' using the exact download_url returned by the tool; "
+        "replace URL with that value. Do not print the raw URL separately. Include the expires_at_utc value "
+        "from the tool response in the message."
     )
 
 
